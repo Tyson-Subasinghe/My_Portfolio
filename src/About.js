@@ -4,8 +4,8 @@ export const About = () => (
 
         <div>
             
-            <h1>Hey my name is Tyson</h1>
-            <p>Yeah boys its me! ABOUT</p>
+            <h1>About Me</h1>
+            <p>The name's Tyson</p>
 
 
         </div>
