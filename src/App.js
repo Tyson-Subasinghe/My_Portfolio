@@ -13,7 +13,6 @@ function App() {
   return (
     <React.Fragment>
       <NavigationBar/>
-      <Jumbotron/>
       <Layout>
         <Router>
           <Switch>
@@ -25,7 +24,7 @@ function App() {
           </Switch>
         </Router>
       </Layout>
-      <Jumbotron/>
+      
     </React.Fragment>
   );
 }

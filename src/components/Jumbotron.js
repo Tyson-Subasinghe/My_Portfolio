@@ -5,7 +5,7 @@ import houseImage from '../assets/houseImage.jpg';
 
 const Styles = styled.div`
 
-    .jumbo{
+    .normal{
         background: url(${houseImage}) no-repeat fixed bottom;
         background-size: cover;
         color: #ccc;
@@ -16,7 +16,7 @@ const Styles = styled.div`
 
     .overlay{
         background-color: black;
-        opacity: 0.4;
+        opacity: 0.3;
         position: absolute;
         top: 0;
         left: 0;
@@ -29,7 +29,7 @@ const Styles = styled.div`
 export const Jumbotron = () => (
 
     <Styles>
-        <Jumbo fluid className="jumbo"> 
+        <Jumbo fluid className="normal"> 
         <div className = "overlay"></div>
         <Container>
             
