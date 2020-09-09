@@ -1,12 +1,12 @@
 import React from 'react';
 import {Jumbotron as Jumbo, Container} from  'react-bootstrap';
 import styled from 'styled-components';
-import shoeImage from '../assets/shoeImage.jpg';
+import houseImage from '../assets/houseImage.jpg';
 
 const Styles = styled.div`
 
     .jumbo{
-        background: url(${shoeImage}) no-repeat fixed bottom;
+        background: url(${houseImage}) no-repeat fixed bottom;
         background-size: cover;
         color: #ccc;
         height: 200px;
