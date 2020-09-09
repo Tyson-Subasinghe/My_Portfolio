@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useState} from 'react';
 import mealMatchImage from './assets/mealMatchImage.png';
 import dungeonGameImage from './assets/dungeonGameImage.png';
 import fnc1Image from './assets/fnc1Image.png';
@@ -35,13 +35,16 @@ const classes = makeStyles((theme) => ({
 
 
 
-export const Projects = () => (
+export const Projects = () => {
+    
+    const [selectedId, setSelectedId] = useState(null)
+ 
+    return(
 
         <div>
             
             <h1>Projects</h1>
             
-
             
             
             <GridList cellHeight={500} className={classes.gridList}>
@@ -78,4 +81,4 @@ export const Projects = () => (
         </div>
 
     
-)
+)}

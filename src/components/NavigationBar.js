@@ -1,5 +1,6 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
+import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
 
@@ -20,20 +21,37 @@ const Styles = styled.div`
 export const NavigationBar = () => (
 
     <Styles>
+         <motion.div 
+        initial={{
+            opacity: 0,
+            y: -10,
+            
+        }}
+        
+        animate={{
+            opacity: 1,
+            y: 0,
+            
+        }}
+        transition={{
+            duration: 0.5
+        }}>
+                            
+                            
+                        
+            <Navbar expand="lg">
+                <Navbar.Brand href ="/"><img src={logo} style={{maxWidth:"15%"}}/></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-navbar-nav">
 
-        <Navbar expand="lg">
-            <Navbar.Brand href ="/"><img src={logo} style={{maxWidth:"15%"}}/></Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className = "ml-auto">
+                        <Nav.Item><Nav.Link href="/about"><motion.div whileHover={{ scale: 1.05 }}> My History </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/projects"><motion.div whileHover={{ scale: 1.05 }}> My Projects </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/contact"><motion.div whileHover={{ scale: 1.05 }}> Contact Me </motion.div></Nav.Link></Nav.Item>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
 
-                <Nav className = "ml-auto">
-                    <Nav.Item><Nav.Link href="/about">My History</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/projects">My Projects</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/contact">Contact Me</Nav.Link></Nav.Item>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-
-
+        </motion.div>
     </Styles>
 )
