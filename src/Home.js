@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import ScrollText from 'react-scroll-text';
 import {motion} from 'framer-motion';
 import tealShoe from './assets/tealShoe.png';
+import blackShoe from './assets/blackShoe.jpg';
+import S63 from './assets/S63.png';
+import weight from './assets/weight.svg';
 import { useInView } from 'react-intersection-observer';
+import {FloatInAnimation} from './components/Animation';
 
 
 const Styles = styled.div`
@@ -25,10 +29,14 @@ const Styles = styled.div`
 export const Home = () => {
     
 
-    const { ref, inView, entry } = useInView({
+    const { ref, inView } = useInView({
         /* Optional options */
         threshold: 0,
-      });
+    });
+    const { ref2, inView2 } = useInView({
+        /* Optional options */
+        threshold: 0,
+    });
 
     return(
     
@@ -72,48 +80,40 @@ export const Home = () => {
                 </Styles>
                 
 
+            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1}>
+                 <h2>Gym</h2>
+                 
+            </FloatInAnimation>
+
+
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1}>
+            <p> I really like the gym and go 6 times a week!</p>
+            </FloatInAnimation>
+
+            <img src={weight} style={{maxWidth:"50%"}}/>
             
             
 
 
             
+
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1}>
+            <img src={tealShoe} style={{maxWidth:"50%"}} className="shoe"/>
+            </FloatInAnimation>
+            
             
 
-            <h2>Gym</h2>
+           
 
-            <p>Your downvote appeal is denied.
+            
 
-            # FAQ            ## What does it mean this time?            You were downvoted by me previously, you appealed, and I didn't accept it.  ## Why did you not accept my appeal?
-            I didn't like one of these things:
-            Your appeal was bland
-            I absolutely hated your comment in the first place
-            You insulted my reasoning
-            ## Will my appeals be denied in the future?
-            That is a possibility. Your comment that I downvoted was outright awful, so it's likely all of your other comments will be downvoted.
-            ## Do you hate me as a person?r appeal was bland
-            I absolutely hated your comment in the first place
-            You insulted my reasoning
-            ## Will my appeals be denied in the future?
-            That is a possibility. Your comment that I downvoted was outright awful, so it's likely all of your other comments will be downvoted.
-            ## Do you hate me as a person?r appeal was bland
-            I absolutely hated your comment in the first place
-            You insulted my reasoning
-            ## Will my appeals be denied in the future?
-            That is a possibility. Your comment that I downvoted was outright awful, so it's likely all of your other comments will be downvoted.
-            ## Do you hate me as a person?r appeal was bland
-            I absolutely hated your comment in the first place
-            You insulted my reasoning
-            ## Will my appeals be denied in the future?
-            That is a possibility. Your comment that I downvoted was outright awful, so it's likely all of your other comments will be downvoted.
-            ## Do you hate me as a person?r appeal was bland
-            I absolutely hated your comment in the first place
-            You insulted my reasoning
+            
 
-            <div ref={ref}>
-                <h2>{`Is this visible? ${inView}.`}</h2>
-            </div>
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1}>
+            <img src={tealShoe} style={{maxWidth:"50%"}} className="shoe"/>
+            </FloatInAnimation>
 
-            ## Will my appeals be denied in the future?
+            <p>## Will my appeals be denied in the future?
             That is a possibility. Your comment that I downvoted was outright awful, so it's likely all of your other comments will be downvoted.
             ## Do you hate me as a person?r appeal was bland
             I absolutely hated your comment in the first place
@@ -133,6 +133,10 @@ export const Home = () => {
             ## Do you hate me as a person?
             No, fellow Redditor, I do not. I would never hate another one of my kind. You have just made a mistake you shall overcome in the near future. And again, remember: Reddit is a privilege, not a right.
             </p>
+
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1}>
+            <img src={tealShoe} style={{maxWidth:"50%"}} className="shoe"/>
+            </FloatInAnimation>
 
 
         </div>
