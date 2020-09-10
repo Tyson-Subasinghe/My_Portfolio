@@ -67,6 +67,21 @@ code {
   color: #ffffff;
   }
 
+a:link {
+  color:#3ad6b9;
+}
+
+a:visited {
+  color: #3ad6b9;
+}
+
+a:hover {
+  color: #3ad6b9;
+}
+
+a:active {
+  color: #3ad6b9;
+}
 
 
 

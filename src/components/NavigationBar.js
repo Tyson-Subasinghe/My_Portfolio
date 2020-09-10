@@ -3,7 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
-import altlogo from '../assets/altlogo.png';
+
 
 const Styles = styled.div`
     .navbar{
@@ -41,7 +41,7 @@ export const NavigationBar = () => (
                             
                         
             <Navbar expand="lg">
-                <Navbar.Brand href ="/"><img src={altlogo} style={{maxWidth:"10%"}}/></Navbar.Brand>
+                <Navbar.Brand href ="/"><img src={logo} style={{maxWidth:"10%"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
 

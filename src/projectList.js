@@ -1,5 +1,15 @@
 const projectList =[
 
+
+    {
+        img: 'https://i.ibb.co/xLhXppf/logo.png',
+        subtitle: 'Side Project',
+        title: 'This Website',
+        languages: 'ReactJS, CSS',
+        description: 'I built this portfolio website using create-react-app. ',
+        link: 'https://github.com/Tyson-Subasinghe/Portfolio',
+      },
+    
     {
         img: 'https://i.ibb.co/g7Xrftb/meal-Match-Image.png',
         subtitle: 'COMP3900 Project [Scored 84/100]',
