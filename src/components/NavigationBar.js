@@ -3,6 +3,7 @@ import { Nav, Navbar } from 'react-bootstrap';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import logo from '../assets/logo.png';
+import altlogo from '../assets/altlogo.png';
 
 const Styles = styled.div`
     .navbar{
@@ -40,14 +41,14 @@ export const NavigationBar = () => (
                             
                         
             <Navbar expand="lg">
-                <Navbar.Brand href ="/"><img src={logo} style={{maxWidth:"15%"}}/></Navbar.Brand>
+                <Navbar.Brand href ="/"><img src={altlogo} style={{maxWidth:"10%"}}/></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
 
                     <Nav className = "ml-auto">
-                        <Nav.Item><Nav.Link href="/about"><motion.div whileHover={{ scale: 1.05 }}><h5> My History </h5></motion.div></Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/projects"><motion.div whileHover={{ scale: 1.05 }}> <h5>My Projects</h5> </motion.div></Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/contact"><motion.div whileHover={{ scale: 1.05 }}> <h5>Contact Me</h5> </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/about"><motion.div whileHover={{ scale: 1.05 }}><h5> History </h5></motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/projects"><motion.div whileHover={{ scale: 1.05 }}> <h5>Projects</h5> </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/contact"><motion.div whileHover={{ scale: 1.05 }}> <h5>Contact</h5> </motion.div></Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

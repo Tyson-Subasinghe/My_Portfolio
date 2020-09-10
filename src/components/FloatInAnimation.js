@@ -10,6 +10,7 @@ export const FloatInAnimation = (props) => {
     return(
 
         <motion.div 
+        layout
         initial={{
             opacity: props.initialOpacity,
             y: 50,

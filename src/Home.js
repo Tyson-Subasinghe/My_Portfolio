@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import ScrollText from 'react-scroll-text';
 import {motion} from 'framer-motion';
 import tealShoe from './assets/tealShoe.png';
-import blackShoe from './assets/blackShoe.jpg';
-import S63 from './assets/S63.png';
-import weight from './assets/weight.svg';
 import { useInView } from 'react-intersection-observer';
 import {FloatInAnimation} from './components/FloatInAnimation';
 
@@ -39,6 +36,8 @@ export const Home = () => {
 
             
                 <Styles>
+                    
+                
                     
                     <ScrollText className="text">
                         <h1 style={{fontFamily: "ITCAvantGardeStd"}}> Rick Owens x adidas x Tyson - Level Runner II Rick Owens x adidas x Tyson - Level Runner II 
