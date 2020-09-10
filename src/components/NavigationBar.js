@@ -45,9 +45,9 @@ export const NavigationBar = () => (
                 <Navbar.Collapse id="basic-navbar-nav">
 
                     <Nav className = "ml-auto">
-                        <Nav.Item><Nav.Link href="/about"><motion.div whileHover={{ scale: 1.05 }}> My History </motion.div></Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/projects"><motion.div whileHover={{ scale: 1.05 }}> My Projects </motion.div></Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/contact"><motion.div whileHover={{ scale: 1.05 }}> Contact Me </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/about"><motion.div whileHover={{ scale: 1.05 }}><h5> My History </h5></motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/projects"><motion.div whileHover={{ scale: 1.05 }}> <h5>My Projects</h5> </motion.div></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/contact"><motion.div whileHover={{ scale: 1.05 }}> <h5>Contact Me</h5> </motion.div></Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

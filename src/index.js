@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './fonts/CharlieText-Regular.ttf';
+import './fonts/CharlieText-Thin.ttf';
+import './fonts/CharlieText-Bold.ttf';
+import './fonts/CharlieText-Light.ttf';
+import './fonts/ITCAvantGardeStd-Demi.otf';
+
+
 
 ReactDOM.render(
   <React.StrictMode>

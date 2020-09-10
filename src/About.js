@@ -1,4 +1,5 @@
 import React from 'react';
+import {FloatInAnimation} from './components/FloatInAnimation';
 
 
 
@@ -7,7 +8,21 @@ export const About = () => (
 
         <div>
             
-            <h1>About Me</h1>
+            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1}>
+                <h1>Professional History</h1>
+            </FloatInAnimation>
+
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1}>
+
+                <h2> Blu Finance </h2>
+
+                <h2> Mortgage Choice </h2>
+
+                <h2> Etc </h2>
+
+                <h2> Etc </h2>
+            </FloatInAnimation>
+            
 
 
             
@@ -16,7 +31,13 @@ export const About = () => (
 
                 
             
-            <h2>See more about me</h2>
+            
+
+            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1}>
+                <h1>Educational History</h1>
+            </FloatInAnimation>
+
+            
 
 
         </div>
