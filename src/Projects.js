@@ -1,35 +1,10 @@
-import {React, useState} from 'react';
-import mealMatchImage from './assets/mealMatchImage.png';
-import dungeonGameImage from './assets/dungeonGameImage.png';
-import fnc1Image from './assets/fnc1Image.png';
-import { makeStyles } from '@material-ui/core/styles';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
+import React from 'react';
+import { useState } from "react";
+import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import "./styles.css";
+import {FloatInAnimation} from './components/FloatInAnimation';
+import projectList from "./projectList";
 
-
-
-
-const classes = makeStyles((theme) => ({
-
-    root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
-      overflow: 'hidden',
-      backgroundColor: "#f2f4f6",
-    },
-
-    gridList: {
-      width: 500,
-      height: 450,
-    },
-    icon: {
-      color: 'rgba(255, 255, 255, 0.54)',
-    },
-  }));
 
 
 
@@ -38,47 +13,71 @@ const classes = makeStyles((theme) => ({
 export const Projects = () => {
     
     const [selectedId, setSelectedId] = useState(null)
- 
+    
     return(
 
         <div>
-            
-            <h1>Projects</h1>
-            
+
             
             
-            <GridList cellHeight={500} className={classes.gridList}>
-                
-                
-                <GridListTile key={1}>
-                    <img src={mealMatchImage} alt={"mealmatch"} />
-                    <GridListTileBar
-                    title={"MealMatch"}
-                    subtitle={"ReactJS, Python"}
-                    />
-                </GridListTile>
+            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1} yOffset={50}>
+                <h1>Projects</h1>
+            </FloatInAnimation>
 
-                <GridListTile key={2}>
-                    <img src={dungeonGameImage} alt={"dungeon"} />
-                    <GridListTileBar
-                    title={"Dungeon Game"}
-                    subtitle={"Java"}
-                    />
-                </GridListTile>
+  
+            
+            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1} yOffset={50}>
 
-                <GridListTile key={3}>
-                    <img src={fnc1Image} alt={"fnc1"} />
-                    <GridListTileBar
-                    title={"FNC-1 Analysis"}
-                    subtitle={"Written Report"}
-                    />
-                </GridListTile>
-                
-            </GridList>
-
-
+                <AnimateSharedLayout>
+                    <motion.ul layout initial={{ borderRadius: 25 }}>
+                        {projectList.map((item) => (
+                        <>{Item(item)}</>
+                        ))}
+                    </motion.ul>
+                </AnimateSharedLayout>
+            </FloatInAnimation>
 
         </div>
 
     
-)}
+    )
+}
+
+
+function Item(props) {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleOpen = () => setIsOpen(!isOpen);
+    
+
+    return (
+      <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+        <motion.div layout > <h2> <img src={props.img} style={{width:'10%', borderRadius: "50%"}}/>       {props.title}</h2><h6>{props.languages}</h6> </motion.div>
+        <AnimatePresence>{isOpen && Content(props)}</AnimatePresence>
+      </motion.li>
+    );
+  }
+  
+  function Content(props) {
+    return (
+      <motion.div
+        
+        initial={{  opacity: 0 }}
+        animate={{  opacity: 1 }}
+        exit={{ opacity: 0 }}
+      > 
+        
+        <div style={{fontWeight:"bold"}}> {props.subtitle}</div>
+        
+        {props.description}
+
+        
+        <a href= {props.link} ><td> View on GitHub</td></a>
+
+        
+        
+        
+      </motion.div>
+    );
+  }
+  

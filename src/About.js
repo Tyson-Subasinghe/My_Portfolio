@@ -97,5 +97,3 @@ function Item(props) {
     );
   }
   
-
-  //Need to have a start date, end date, name of company, role name, logo URL and description as well as a key variable
