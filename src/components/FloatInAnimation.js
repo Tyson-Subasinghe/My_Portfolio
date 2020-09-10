@@ -13,11 +13,11 @@ export const FloatInAnimation = (props) => {
         layout
         initial={{
             opacity: props.initialOpacity,
-            y: 50,
+            y: props.yOffset,
         }}
         animate={{
             opacity: inView ? props.finalOpacity : props.initialOpacity,
-            y: inView ? 0 : 50,
+            y: inView ? 0 : props.yOffset,
         }}
         transition={{
             duration: props.duration

@@ -57,6 +57,15 @@ code {
   src: local('Charlie'), url(./fonts/ITCAvantGardeStd-Demi.otf) format('opentype');
 }
 
+::selection {
+  background-color: rgba(58, 214, 185, 0.8);
+  color: #ffffff;
+  }
+
+::-moz-selection {
+  background-color: rgba(58, 214, 185, 0.8);
+  color: #ffffff;
+  }
 
 
 
