@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {motion} from 'framer-motion';
 
 
 export const Contact = () => {
@@ -7,10 +7,8 @@ export const Contact = () => {
       
      return(
         <div>
-            <h1> Contact me ASAP :)</h1>
+            <h1> Contact me via</h1>
         
-            
-
 
         </div>
 

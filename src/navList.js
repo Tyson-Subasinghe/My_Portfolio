@@ -3,35 +3,39 @@ const navList =[
     {
         title: 'Home',
         url: '/',
-        image: 'https://www.flaticon.com/svg/static/icons/svg/846/846449.svg',
+        image: 'https://svgur.com/i/PXw.svg',
         
       },
       {
-        title: 'About',
-        url: '/about',
-        image: 'https://www.flaticon.com/svg/static/icons/svg/157/157933.svg',
+        title: 'Experience',
+        url: '/experience',
+        image: 'https://svgur.com/i/PVd.svg',
         
       },
       {
         title: 'Projects',
         url: '/projects',
-        image: 'https://www.flaticon.com/svg/static/icons/svg/1659/1659067.svg',
+        image: 'https://svgur.com/i/PXv.svg',
+        
+      },
+      {
+        title: 'Passions',
+        url: '/passions',
+        image: 'https://svgur.com/i/PY3.svg',
         
       },
       {
         title: 'Contact',
         url: '/contact',
-        image: 'https://www.flaticon.com/svg/static/icons/svg/684/684816.svg',
+        image: 'https://svgur.com/i/PWX.svg',
         
       },
       {
-        title: '404',
+        title: '404 Page',
         url: '/FourOhFour',
-        image: 'https://www.flaticon.com/svg/static/icons/svg/550/550096.svg',
+        image: 'https://svgur.com/i/PWB.svg',
         
       },
-
-
 
 ];
 

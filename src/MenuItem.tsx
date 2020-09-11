@@ -6,6 +6,7 @@ import { Nav, Navbar, NavLink } from 'react-bootstrap';
 
 const variants = {
   open: {
+    width: 200,
     y: 0,
     zIndex: 10,
     opacity: 1,
@@ -23,21 +24,21 @@ const variants = {
   }
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
 export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+  const style = {};
   
   return (
-    <NavLink href={i.url}>
+    <NavLink href={i.url} style={{color:"#000000"}}>
       <motion.li
         variants={variants}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
         
-        <div className="icon-placeholder" style={style}><img src={i.image} style={{width:'100%'}}/></div>
+        <div className="icon-placeholder" style={style}><img src={i.image} style={{width:'25px'}}/></div>
         <div className="text-placeholder" style={style}>{i.title}</div>
+        
       </motion.li>
     </NavLink>
     

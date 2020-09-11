@@ -5,7 +5,7 @@ const projectList =[
         img: 'https://i.ibb.co/xLhXppf/logo.png',
         subtitle: 'Side Project',
         title: 'This Website',
-        languages: 'ReactJS, CSS',
+        languages: 'ReactJS, TypeScript, CSS',
         description: 'I built this portfolio website using create-react-app. ',
         link: 'https://github.com/Tyson-Subasinghe/Portfolio',
       },

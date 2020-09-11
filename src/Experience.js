@@ -9,7 +9,7 @@ import educationHistoryList from "./educationHistoryList";
 
 
 
-export const About = () => {
+export const Experience = () => {
     
     const [selectedId, setSelectedId] = useState(null);
     
