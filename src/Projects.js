@@ -27,7 +27,6 @@ export const Projects = () => {
   
             
             <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1} yOffset={50}>
-
                 <AnimateSharedLayout>
                     <motion.ul layout initial={{ borderRadius: 25 }}>
                         {projectList.map((item) => (

@@ -12,12 +12,12 @@ const Styles = styled.div`
 
     .shoe{
         position: relative;
-        z-index: 2;
+        z-index: -1;
     }
 
     .text{
         position: absolute;
-        z-index: 1;
+        z-index: -2;
         
     }
 `;

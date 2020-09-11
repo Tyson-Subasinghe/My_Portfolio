@@ -6,13 +6,13 @@ import {Projects} from './Projects';
 import {Contact} from './Contact';
 import {NoMatch} from './NoMatch';
 import {Layout} from './components/Layout';
-import {NavigationBar} from './components/NavigationBar';
+import {NavBar} from './NavBar.tsx';
 
 
 function App() {
   return (
     <React.Fragment>
-      <NavigationBar/>
+      <NavBar/>
       <Layout>
         <Router>
           <Switch>
