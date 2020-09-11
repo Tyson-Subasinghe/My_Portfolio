@@ -40,7 +40,7 @@ export const Home = () => {
                 
                     
                     <ScrollText className="text">
-                        <h1 style={{fontFamily: "ITCAvantGardeStd"}}> Rick Owens x adidas x Tyson - Level Runner II Rick Owens x adidas x Tyson - Level Runner II 
+                        <h1 style={{fontFamily: "ITCAvantGardeStd", marginTop: "25%"}}> Rick Owens x adidas x Tyson - Level Runner II Rick Owens x adidas x Tyson - Level Runner II 
                         </h1>
                     </ScrollText>
                     
@@ -63,7 +63,7 @@ export const Home = () => {
                         duration: 1
                     }}>
 
-                        <img src={tealShoe} style={{maxWidth:"50%"}} className="shoe"/>
+                        <img src={tealShoe} style={{maxWidth:"50%", marginLeft:"35%", marginTop:"7%"}} className="shoe"/>
                         
                     </motion.div>
 

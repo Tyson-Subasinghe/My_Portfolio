@@ -11,7 +11,7 @@ import educationHistoryList from "./educationHistoryList";
 
 export const About = () => {
     
-    const [selectedId, setSelectedId] = useState(null)
+    const [selectedId, setSelectedId] = useState(null);
     
     return(
 
@@ -19,16 +19,16 @@ export const About = () => {
 
             
             
-            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={.75} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <h1>Professional History</h1>
             </FloatInAnimation>
 
             
   
             
-            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={1} initialOpacity={0} finalOpacity={1} yOffset={50}>
 
-                <AnimateSharedLayout>
+                <AnimateSharedLayout type="crossfade">
                     <motion.ul layout initial={{ borderRadius: 25 }}>
                         {workHistoryList.map((item) => (
                         <>{Item(item)}</>
@@ -37,14 +37,14 @@ export const About = () => {
                 </AnimateSharedLayout>
             </FloatInAnimation>
 
-            <FloatInAnimation duration={1.5} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={.75} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <h1>Education History</h1>
             </FloatInAnimation>
 
             
   
             
-            <FloatInAnimation duration={2} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={1} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <AnimateSharedLayout>
                     <motion.ul layout initial={{ borderRadius: 25 }}>
                         {educationHistoryList.map((item) => (
@@ -54,8 +54,6 @@ export const About = () => {
                 </AnimateSharedLayout>
             </FloatInAnimation>
                         
-            
-            
 
 
         </div>

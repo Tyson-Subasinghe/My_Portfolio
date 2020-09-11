@@ -2,9 +2,10 @@ import React from 'react';
 
 
 
-export const Contact = () => (
-    
+export const Contact = () => {
 
+      
+     return(
         <div>
             <h1> Contact me ASAP :)</h1>
         
@@ -14,4 +15,4 @@ export const Contact = () => (
         </div>
 
     
-)
+)}
