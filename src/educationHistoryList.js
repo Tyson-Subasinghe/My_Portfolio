@@ -17,6 +17,17 @@ const educationHistoryList =[
     description: 'Commerce/CompSci double degree - 72.3 WAM',
     
     },
+
+    {
+    img: 'https://i.ibb.co/WySQsNj/KAPLAN.png',
+    name: 'KAPLAN',
+    title: 'Cert. IV (FNS40815)',
+    duration: 'Class of 2018',
+    description: 'Certificate IV in Finance & Mortgage Broking',
+    
+    },
+
+    
     
     {
     img: 'https://i.ibb.co/ZKzXPwN/HAHS-logo.png',

@@ -14,7 +14,7 @@ const projectList =[
         img: 'https://i.ibb.co/g7Xrftb/meal-Match-Image.png',
         subtitle: 'COMP3900 Project [Scored 84/100]',
         title: 'MealMatch Website',
-        languages: 'ReactJS, Python',
+        languages: 'ReactJS, Python, CSS',
         description: 'MealMatch lets users find recipes based on ingredients they have in their fridges. The project was completed as part of a team of five people. ',
         link: 'https://github.com/Tyson-Subasinghe/MealMatch',
       },

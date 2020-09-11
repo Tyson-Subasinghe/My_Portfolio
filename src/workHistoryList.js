@@ -4,7 +4,7 @@ const workHistoryList =[
         img: 'https://i.ibb.co/zrQ3VR0/Blu-name-Blue-text.png',
         name: 'Blu Finance',
         title: 'Founder',
-        duration: 'Sep 2019 - Sep 2020',
+        duration: 'Feb 2019 -> Sep 2020',
         description: 'I ran a finance company',
         
       },
