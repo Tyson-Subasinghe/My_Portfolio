@@ -11,6 +11,7 @@ export const FloatInAnimation = (props) => {
 
         <motion.div 
         layout
+        
         initial={{
             opacity: props.initialOpacity,
             y: props.yOffset,

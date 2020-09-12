@@ -1,16 +1,16 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import { Swipe } from "./components/swipe/swipe.tsx";
+import { Refresh } from "./components/swipe/refresh.tsx";
+
 
 
 export const Contact = () => {
 
-      
-     return(
-        <div>
-            <h1> Contact me via</h1>
-        
+  return (
+      <>
+      <Swipe></Swipe>
+      <Refresh></Refresh>
+      </>
+  );
 
-        </div>
-
-    
-)}
+}

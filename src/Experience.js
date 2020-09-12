@@ -19,14 +19,14 @@ export const Experience = () => {
 
             
             
-            <FloatInAnimation duration={.75} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <h1>Professional History</h1>
             </FloatInAnimation>
 
             
   
             
-            <FloatInAnimation duration={1} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
 
                 <AnimateSharedLayout type="crossfade">
                     <motion.ul layout initial={{ borderRadius: 25 }}>
@@ -37,14 +37,14 @@ export const Experience = () => {
                 </AnimateSharedLayout>
             </FloatInAnimation>
 
-            <FloatInAnimation duration={.75} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <h1>Education History</h1>
             </FloatInAnimation>
 
             
   
             
-            <FloatInAnimation duration={1} initialOpacity={0} finalOpacity={1} yOffset={50}>
+            <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
                 <AnimateSharedLayout>
                     <motion.ul layout initial={{ borderRadius: 25 }}>
                         {educationHistoryList.map((item) => (
