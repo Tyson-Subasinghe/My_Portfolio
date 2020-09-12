@@ -1,6 +1,6 @@
 import React from 'react';
-import { Swipe } from "./components/swipe/swipe.tsx";
-import { Refresh } from "./components/swipe/refresh.tsx";
+import { Swipe } from "../components/swipe/swipe.tsx";
+import { Refresh } from "../components/swipe/refresh.tsx";
 
 
 

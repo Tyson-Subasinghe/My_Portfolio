@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import "./styles.css";
-import {FloatInAnimation} from './components/FloatInAnimation';
-import workHistoryList from "./workHistoryList";
-import educationHistoryList from "./educationHistoryList";
+import "../styles.css";
+import {FloatInAnimation} from '../components/FloatInAnimation';
+import workHistoryList from "../assets/data/workHistoryList";
+import educationHistoryList from "../assets/data/educationHistoryList";
 
 
 

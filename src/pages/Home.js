@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import ScrollText from 'react-scroll-text';
 import {motion} from 'framer-motion';
-import tealShoe from './assets/tealShoe.png';
+import tealShoe from '../assets/tealShoe.png';
 import { useInView } from 'react-intersection-observer';
-import {FloatInAnimation} from './components/FloatInAnimation';
+import {FloatInAnimation} from '../components/FloatInAnimation';
 
 
 

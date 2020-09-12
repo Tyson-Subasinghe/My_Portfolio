@@ -1,7 +1,7 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem.tsx";
-import navList from "./navList.js";
+import navList from "./navigationList.js";
 
 const variants = {
   open: { opacity:1, zIndex: 5, pointerEvents: "auto",

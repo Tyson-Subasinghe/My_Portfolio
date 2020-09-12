@@ -22,7 +22,7 @@ export const Swipe = () => {
   return (
     <motion.div className="example-container" style={{ background }}>
 
-      <motion.div className="prompt"><h1>Box with contacts goes here</h1></motion.div>
+      <motion.div className="prompt" style={{zIndex:1}}>Box with contacts goes here</motion.div>
 
       <motion.div
         className="box"
@@ -30,7 +30,7 @@ export const Swipe = () => {
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
       >
-
+        
         <svg className="progress-icon" viewBox="0 0 50 50">
           
           <motion.path

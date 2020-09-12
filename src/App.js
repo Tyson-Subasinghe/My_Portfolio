@@ -1,12 +1,12 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {Home} from './Home';
-import {Experience} from './Experience';
-import {Projects} from './Projects';
-import {Passions} from './Passions';
-import {Contact} from './Contact';
-import {NoMatch} from './NoMatch';
-import {NavBar} from './NavBar.tsx';
+import {Home} from './pages/Home';
+import {Experience} from './pages/Experience';
+import {Projects} from './pages/Projects';
+import {Passions} from './pages/Passions';
+import {Contact} from './pages/Contact';
+import {NoMatch} from './pages/404';
+import {NavBar} from './components/navigation/NavBubble.tsx';
 
 
 function App() {

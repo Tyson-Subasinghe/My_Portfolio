@@ -3,13 +3,15 @@ import { useState } from "react";
 import { useRef } from "react";
 import {motion} from 'framer-motion';
 
-import './shapeStyles.css';
-import { useDimensions } from "./use-dimensions.ts";
+import '../components/404/styles.css';
+import { useDimensions } from "../components/navigation/use-dimensions.ts";
 
 
 export const Passions = () => {
 
-    
+      
+    const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 
       
     const [isClicked, setIsClicked] = useState(false);
@@ -17,29 +19,25 @@ export const Passions = () => {
 
     const containerRef = useRef(null);
     const {height, width} = useDimensions(containerRef);
-    
+  
+
+
       
      return(
         <div>
             <h1> Contact me via</h1>
 
-            //Bouncy!
+            
             <motion.div className="container" 
             animate={{scale: isClicked ? [1,0.7,0.9,0.75,0.85,0.78,0.82,0.8]:[0.8,1.1,0.9,1.05,0.95,1.025,0.975,1]}} onClick={()=>setIsClicked(!isClicked)}>
             
             </motion.div>
 
-            //HOVER!
-            <motion.div className="linkedIn"
+            <motion.div className="ball"
             ref = {containerRef}
             drag
-            dragConstraints ={10}
-            whileHover={{ scale: 1.2, rotate: 90 }}
-            whileTap={{
-                scale: 0.8,
-                rotate: -90,
-                borderRadius: "100%"
-            }}>
+            dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh/2 + 75), bottom: (vh/2 - 75)}}
+            >
 
             </motion.div>
             

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from "react";
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import "./styles.css";
-import {FloatInAnimation} from './components/FloatInAnimation';
-import projectList from "./projectList";
+import "../styles.css";
+import {FloatInAnimation} from '../components/FloatInAnimation';
+import projectList from "../assets/data/projectList";
 
 
 
