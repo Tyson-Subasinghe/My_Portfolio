@@ -19,11 +19,16 @@ export const NoMatch = () => {
 
     
     return(
+
         <motion.div className="example-container" style={{ background }}>
             
+            <div>
             <h1>Four Hundred and Four</h1>
-            <div>What did you expect? :)</div>
-            <div> Here is a shape to play with</div>
+            <p> </p>
+            <p>What did you expect? :)</p>
+            <p>Here is a shape to play with</p>
+            </div>
+            
 
 
             

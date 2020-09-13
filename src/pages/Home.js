@@ -2,9 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import ScrollText from 'react-scroll-text';
 import {motion} from 'framer-motion';
+import Marquee from "react-marquee";
 import tealShoe from '../assets/tealShoe.png';
 import { useInView } from 'react-intersection-observer';
 import {FloatInAnimation} from '../components/FloatInAnimation';
+import {rickLogo} from '../assets/tealShoe.png'
 
 
 
@@ -15,8 +17,24 @@ const Styles = styled.div`
         z-index: -1;
     }
 
-    .text{
+    .textLeft{
         position: absolute;
+        top: calc(40%);
+        right: calc(50%);
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+        z-index: -2;
+        
+    }
+
+    .textRight{
+        position: absolute;
+        top: calc(40%);
+        left: calc(50%);
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
         z-index: -2;
         
     }
@@ -29,11 +47,11 @@ const Styles = styled.div`
         align-items: center;
         width: 100vw;
         height: 100vh;
+        background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
+        background-repeat: no-repeat;
+        display: flex;
     }
 `;
-const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
-
-
 
 export const Home = () => {
     
@@ -47,16 +65,35 @@ export const Home = () => {
 
             
                 <Styles>
-
-                     <motion.div className="background" style={{background}} >
+                    
+                     
+                     <motion.div className="background"  >
 
                      
-                    
-                        <ScrollText className="text">
-                            <h1 style={{fontFamily: "ITCAvantGardeStd"}}> Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick OwensRick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick OwensRick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  
-                            </h1>
-                        </ScrollText>
-                    
+
+                     <motion.div 
+                        initial={{
+                            opacity: 0,
+                        }}
+                        animate={{
+                            opacity: 1,
+                        }}
+                        transition={{delay: 1, duration: 0
+                        }} style={{alignItems:"center"}}>
+                                    
+                            
+                            
+                            <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap', fontFamily: "ITCAvantGardeStd", fontSize: "10vh"}}>
+                                <Marquee  hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
+                            </div>
+
+                            <div className="textRight" style={{ width: '50vw', whiteSpace: 'nowrap', fontFamily: "Plateia", fontSize: "8vh"}}>
+                                <Marquee  hoverToStop={true} loop={true} text="Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  "/>
+                            </div>
+
+                        </motion.div>
+                        
+                       
                     
 
                         <motion.div 
@@ -75,8 +112,9 @@ export const Home = () => {
                         transition={{
                             duration: 1
                         }}>
+                            
 
-                            <img src={tealShoe} style={{maxWidth:"50%", marginLeft:"25%"}} className="shoe"/>
+                            <img src={tealShoe} style={{width:"80vmin", mouseEvents:"none"}} className="shoe"/>
                             
                         </motion.div>
                     </motion.div>

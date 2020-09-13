@@ -22,7 +22,9 @@ export const Swipe = () => {
   return (
     <motion.div className="example-container" style={{ background }}>
 
-      <motion.div className="prompt" style={{zIndex:1}}>Box with contacts goes here</motion.div>
+      <motion.div className="prompt1" style={{zIndex:1}}><h1>Get in touch</h1></motion.div>
+      
+      <motion.div className="prompt" style={{zIndex:1}}><h2>Swipe left or right on me!</h2></motion.div>
 
       <motion.div
         className="box"

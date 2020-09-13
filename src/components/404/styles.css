@@ -1,7 +1,8 @@
 
 .example-container {
-    position: absolute;
+   
     display: flex;
+    overflow: wrap;
     justify-content: center;
     align-items: center;
   }

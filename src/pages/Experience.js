@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import styled from 'styled-components';
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import "../styles.css";
 import {FloatInAnimation} from '../components/FloatInAnimation';
@@ -10,55 +11,64 @@ import educationHistoryList from "../assets/data/educationHistoryList";
 
 const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
 
+
+const Styles = styled.div`
+
+
+
+`;
+
+
 export const Experience = () => {
     
     const [selectedId, setSelectedId] = useState(null);
     
     return(
 
-        <div style={{background}} className="background">
+            <Styles>
 
-            
-            
-            <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                <h1>Professional History</h1>
-            </FloatInAnimation>
+              <motion.div className="background">
 
-            
-  
-            
-            <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
+                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
+                    <h1>Professional History</h1>
+                </FloatInAnimation>
 
-                <AnimateSharedLayout type="crossfade">
-                    <motion.ul layout initial={{ borderRadius: 25 }}>
-                        {workHistoryList.map((item) => (
-                        <>{Item(item)}</>
-                        ))}
-                    </motion.ul>
-                </AnimateSharedLayout>
-            </FloatInAnimation>
+                
+      
+                
+                <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
 
-            <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                <h1>Education History</h1>
-            </FloatInAnimation>
+                    <AnimateSharedLayout type="crossfade">
+                        <motion.ul layout initial={{ borderRadius: 25 }}>
+                            {workHistoryList.map((item) => (
+                            <>{Item(item)}</>
+                            ))}
+                        </motion.ul>
+                    </AnimateSharedLayout>
+                </FloatInAnimation>
 
-            
-  
-            
-            <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                <AnimateSharedLayout>
-                    <motion.ul layout initial={{ borderRadius: 25 }}>
-                        {educationHistoryList.map((item) => (
-                        <>{Item(item)}</>
-                        ))}
-                    </motion.ul>
-                </AnimateSharedLayout>
-            </FloatInAnimation>
-                        
+                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
+                    <h1>Education History</h1>
+                </FloatInAnimation>
+
+                
+      
+                
+                <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
+                    <AnimateSharedLayout>
+                        <motion.ul layout initial={{ borderRadius: 25 }}>
+                            {educationHistoryList.map((item) => (
+                            <>{Item(item)}</>
+                            ))}
+                        </motion.ul>
+                    </AnimateSharedLayout>
+                </FloatInAnimation>
+                            
 
 
-        </div>
+              </motion.div>
 
+            </Styles>
     
     )
 }

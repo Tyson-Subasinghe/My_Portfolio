@@ -5,9 +5,7 @@ html,
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(250deg, #ffffff, #f2f4f6);
+  background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
   background-repeat: no-repeat;
   display: flex;
 
@@ -23,7 +21,6 @@ ul {
   width: 1200px;
   display: flex;
   flex-direction: column;
-  background: white;
   padding: 20px;
   border-radius: 25px;
 }

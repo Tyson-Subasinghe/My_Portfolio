@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useRef } from "react";
 import {motion} from 'framer-motion';
 
+import Marquee from "react-marquee";
+import Ticker from 'react-ticker'
 import '../components/404/styles.css';
 import { useDimensions } from "../components/navigation/use-dimensions.ts";
 
@@ -27,17 +29,63 @@ export const Passions = () => {
         <div>
             <h1> Contact me via</h1>
 
+
+
+
+        
+           
+
+
+
+
+            <div
+      style={{
+        width: '50vw',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      <Marquee style={{ width: '50vw', whiteSpace: 'nowrap'}} hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
+        
+
+    </div>
             
-            <motion.div className="container" 
+            
+            
+            
+             <motion.div className="container" 
             animate={{scale: isClicked ? [1,0.7,0.9,0.75,0.85,0.78,0.82,0.8]:[0.8,1.1,0.9,1.05,0.95,1.025,0.975,1]}} onClick={()=>setIsClicked(!isClicked)}>
-            
+             <Ticker>
+                                    {({ index }) => (
+                                    <>
+                                        <h1>This is the Headline of element #{index}!</h1>
+                                        
+                                    </>
+                                    )}
+                                    </Ticker>
             </motion.div>
+            <Ticker>
+                                    {({ index }) => (
+                                    <>
+                                        <h1>This is the Headline of element #{index}!</h1>
+                                        
+                                    </>
+                                    )}
+                                    </Ticker>
+            
 
             <motion.div className="ball"
             ref = {containerRef}
             drag
             dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh/2 + 75), bottom: (vh/2 - 75)}}
             >
+                 <Ticker>
+                                    {({ index }) => (
+                                    <>
+                                        <h1>This is the Headline of element #{index}!</h1>
+                                        
+                                    </>
+                                    )}
+                                    </Ticker>
 
             </motion.div>
             
@@ -50,6 +98,19 @@ export const Passions = () => {
             <h2> Technology</h2>
             <h2> Photography</h2>
             <h2> Startups</h2>
+
+                             
+            <Ticker>
+              {({ index }) => (
+            <>
+                <h1>This is the Headline of element #{index}!</h1>
+                
+            </>
+             )}
+             </Ticker>
+            
+
+            
         
 
             

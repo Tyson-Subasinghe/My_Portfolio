@@ -57,6 +57,14 @@ code {
   src: local('Charlie'), url(./fonts/ITCAvantGardeStd-Demi.otf) format('opentype');
 }
 
+
+@font-face {
+  font-family: 'Plateia';
+  src: local('Charlie'), url(./fonts/Plateia-Bold.ttf) format('truetype');
+}
+
+
+
 ::selection {
   background-color: rgba(58, 214, 185, 0.8);
   color: #ffffff;

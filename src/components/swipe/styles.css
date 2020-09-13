@@ -4,9 +4,17 @@
     height: 100vh;
   }
   
+  .prompt1 {
+    position: absolute;
+    top: calc(150px / 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .prompt {
-    position: relative;
-    top: calc(50% - 350px / 2);
+    position: absolute;
+    top: calc(1000px / 2);
     display: flex;
     justify-content: center;
     align-items: center;
