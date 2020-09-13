@@ -22,8 +22,8 @@ export const NoMatch = () => {
         <motion.div className="example-container" style={{ background }}>
             
             <h1>Four Hundred and Four</h1>
-            <p>What did you expect? :)</p>
-            <p> Here is a shape to play with</p>
+            <div>What did you expect? :)</div>
+            <div> Here is a shape to play with</div>
 
 
             

@@ -8,6 +8,7 @@ import educationHistoryList from "../assets/data/educationHistoryList";
 
 
 
+const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
 
 export const Experience = () => {
     
@@ -15,7 +16,7 @@ export const Experience = () => {
     
     return(
 
-        <div>
+        <div style={{background}} className="background">
 
             
             

@@ -22,7 +22,13 @@ const Styles = styled.div`
     }
 
     .background{
-        z-index:-3
+        z-index: -3;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
     }
 `;
 const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
@@ -35,46 +41,49 @@ export const Home = () => {
     return(
     
 
-        <div style={{background}} className="background">
+       
             
             
 
             
                 <Styles>
+
+                     <motion.div className="background" style={{background}} >
+
+                     
                     
-                
-                    
-                    <ScrollText className="text">
-                        <h1 style={{fontFamily: "ITCAvantGardeStd", marginTop: "25%"}}> Rick Owens x adidas x Tyson - Level Runner II Rick Owens x adidas x Tyson - Level Runner II 
-                        </h1>
-                    </ScrollText>
+                        <ScrollText className="text">
+                            <h1 style={{fontFamily: "ITCAvantGardeStd"}}> Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick OwensRick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick OwensRick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  
+                            </h1>
+                        </ScrollText>
                     
                     
 
-                    <motion.div 
-                    initial={{
-                        opacity: 0,
-                        y: 100,
-                        rotate: -10
-                    }}
-                    
-                    animate={{
-                        opacity: 1,
-                        y: 0,
-                        rotate:0
-                    }}
-
-                    transition={{
-                        duration: 1
-                    }}>
-
-                        <img src={tealShoe} style={{maxWidth:"50%", marginLeft:"35%", marginTop:"7%"}} className="shoe"/>
+                        <motion.div 
+                        initial={{
+                            opacity: 0,
+                            y: 100,
+                            rotate: -10
+                        }}
                         
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            rotate:0
+                        }}
+
+                        transition={{
+                            duration: 1
+                        }}>
+
+                            <img src={tealShoe} style={{maxWidth:"50%", marginLeft:"25%"}} className="shoe"/>
+                            
+                        </motion.div>
                     </motion.div>
 
                 </Styles>
 
-        </div>
+        
 
     
 )}

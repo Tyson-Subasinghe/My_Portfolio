@@ -1,12 +1,6 @@
 
-.container {
-    background: green;
-    border-radius: 30px;
-    width: 150px;
-    height: 150px;
+.example-container {
     position: absolute;
-    top: calc(50% - 450px / 2);
-    left: calc(50% - 150px / 2);
     display: flex;
     justify-content: center;
     align-items: center;
