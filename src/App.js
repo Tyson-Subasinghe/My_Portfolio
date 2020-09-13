@@ -9,6 +9,7 @@ import {NoMatch} from './pages/404';
 import {NavBar} from './components/navigation/NavBubble.tsx';
 
 
+
 function App() {
   return (
     <React.Fragment>

@@ -20,7 +20,12 @@ const Styles = styled.div`
         z-index: -2;
         
     }
+
+    .background{
+        z-index:-3
+    }
 `;
+const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
 
 
 
@@ -30,7 +35,7 @@ export const Home = () => {
     return(
     
 
-        <div>
+        <div style={{background}} className="background">
             
             
 

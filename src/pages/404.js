@@ -21,15 +21,14 @@ export const NoMatch = () => {
     return(
         <motion.div className="example-container" style={{ background }}>
             
-            <h1>Four Hundred and Four :)</h1>
-            <p>I hope this is what you wanted.</p>
+            <h1>Four Hundred and Four</h1>
+            <p>What did you expect? :)</p>
             <p> Here is a shape to play with</p>
 
 
             
 
             <motion.div className="ball"
-            
             ref = {ballRef}
             drag
             dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh/2 + 75), bottom: (vh/2 - 75)}}
@@ -42,7 +41,7 @@ export const NoMatch = () => {
             }}
             >
 
-              
+            
 
             </motion.div>
 

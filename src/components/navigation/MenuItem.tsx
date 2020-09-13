@@ -2,6 +2,18 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Nav, Navbar, NavLink } from 'react-bootstrap';
 
+import home from './home.svg';
+import history from './history.svg';
+import projects from './projects.svg';
+import passions from './passions.svg';
+import contact from './contact.svg';
+import fourohfour from './404.svg';
+
+
+
+
+
+const colors = [home,history,projects,passions,contact,fourohfour];
 
 
 const variants = {
@@ -36,7 +48,7 @@ export const MenuItem = ({ i }) => {
         whileTap={{ scale: 0.95 }}
       >
         
-        <div className="icon-placeholder" style={style}><img src={i.image} style={{width:'25px'}}/></div>
+        <div className="icon-placeholder" style={style}><img src={colors[i.number-1]} style={{width:'25px' }}/></div>
         <div className="text-placeholder" style={style}>{i.title}</div>
         
       </motion.li>
