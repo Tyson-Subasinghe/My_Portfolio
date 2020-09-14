@@ -4,30 +4,57 @@ import { useInView } from 'react-intersection-observer';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import { useDimensions } from "../navigation/use-dimensions.ts";
+import {isBrowser, isMobile} from "react-device-detect";
+
 
 
 
 const Styles = styled.div`
 
 .container {
-  width: 150px;
-  height: 150px;
+
+    ${isMobile ? 
+        `
+        width: 13vh;
+        height: 13vh;
+        margin: 0.7vh;
+        border-radius: 4.5vh;
+        `
+        :
+        `
+        width: 10vw;
+        height: 10vw;
+        margin: 1vw;
+        border-radius: 3.3vw;
+        `
+        }
+  
   display: grid;
   overflow: wrap;
-  margin: 10px;
+  
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 50px;
+  
   display: flex;
   justify-content: center;
   align-items: center;
   mouseEvents: none;
+  
 }
 
 .containerImage {
-  width: 80px;
-  height: 80px;
-  mouseEvents: none;
+    ${isMobile ? 
+        `
+        width: 7vh;
+        height: 7vh;
+        `
+        :
+        `
+        width: 5.33vw;
+        height: 5.33vw;
+        `
+        }
   
+  mouseEvents: none;
 }
 
 
