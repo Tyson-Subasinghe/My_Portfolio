@@ -6,7 +6,8 @@ import "../styles.css";
 import {FloatInAnimation} from '../components/FloatInAnimation';
 import workHistoryList from "../assets/data/workHistoryList";
 import educationHistoryList from "../assets/data/educationHistoryList";
-
+import {ImageBox} from '../components/imageBox/imageBox';
+import {isBrowser, isMobile} from "react-device-detect";
 
 
 const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
@@ -19,106 +20,151 @@ const Styles = styled.div`
 .background{
   z-index: -3;
   position: absolute;
-  
+  height: 100vh;
+  width: 100vw;
   background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
   background-repeat: no-repeat;
   
 }
 
 
+.invisibleoverlay{
+  z-index: 2;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg, rgba(0, 255, 185, 0.8) 0%, rgb(58,214,185,0.8) 100%);
+}
+
+.overlay{
+  z-index: 3;
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+  height: 80vh;
+  width: 80vw;
+  border-radius: 5vh;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.overlayContent{
+
+        z-index:4;
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        height: 70vh;
+        width: 70vw;
+        justify-content: center;
+        align-items: center;
+        
+        
+}
+
+
 `;
 
+function handleVisibility() {
+  
+  
+
+};
 
 export const Experience = () => {
     
-    const [selectedId, setSelectedId] = useState(null);
-    
+  const [selectedId, setSelectedId] = useState(null);
+  const [contentOpacity, setContentOpacity] = useState(1);
+  
+   
+
     return(
 
-            <Styles>
+    <Styles>
 
-              <motion.div className="background">
-                
-                
-                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <h1>Professional History</h1>
-                </FloatInAnimation>
+      <div className="background" >
+
+      <div>
       
-                
-                <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
+{selectedId  &&  (
+  
+<div> 
+    
+    <motion.div className="invisibleoverlay" onClick={() => {
+              setContentOpacity(0);
+              setTimeout(function(){setContentOpacity(1)}, 500);
+              setTimeout(function(){setSelectedId(null)}, 500);
+              }}
+              initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: contentOpacity,
+            }}
+            transition={{delay: 0, duration: 0.5}}/>
 
-                    <AnimateSharedLayout type="crossfade">
-                        <motion.ul  initial={{ borderRadius: 25 }}>
-                            {workHistoryList.map((item) => (
-                            <>{Item(item)}</>
-                            ))}
-                        </motion.ul>
-                    </AnimateSharedLayout>
-                </FloatInAnimation>
-
-                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <h1>Education History</h1>
-                </FloatInAnimation>
-
-                
+      <motion.div className="overlay"
       
-                
-                <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <AnimateSharedLayout type="crossfade">
-                        <motion.ul  initial={{ borderRadius: 25 }}>
-                            {educationHistoryList.map((item) => (
-                            <>{Item(item)}</>
-                            ))}
-                        </motion.ul>
+      initial={{
+        opacity: 0,
+    }}
+    animate={{
+        opacity: contentOpacity,
+    }}
+    transition={{delay: 0, duration: 0.5}}>
+      
+        <div className="overlayContent">
+           
+            <motion.div 
+            initial={{
+                opacity: 0,
+            }}
+            animate={{
+                opacity: contentOpacity,
+            }}
+            transition={{delay: 0, duration: 0.5}}
+            >
+              
+            <h1>{workHistoryList[selectedId-1].name}</h1>
+            <h2>{workHistoryList[selectedId-1].title}</h2>
+            <h3>{workHistoryList[selectedId-1].description}</h3>
+            <button onClick={() => {
+              setContentOpacity(0);
+              setTimeout(function(){setContentOpacity(1)}, 500);
+              setTimeout(function(){setSelectedId(null)}, 500);
+              }} 
+          style={{height:"30px", width:"30px", borderRadius: "50%"}} />
+            </motion.div>
 
-                    </AnimateSharedLayout>
+        </div>
+      </motion.div>
+    
 
-                </FloatInAnimation>
+  </div>
 
+)}
 
+</div>
+        
+          <h1>Professional History</h1>
 
-                               
-                
-                            
+              {workHistoryList.map(item => (
+                <div  layoutId={item.id} onClick={() => setSelectedId(item.id)}>
+                    <img src={item.img} style={{width:"100px"}}/>
+                </div>))}
 
+          <h1>Education History</h1>
+      
+          
+          
 
-              </motion.div>
+        
+      
+      </div>
 
-            </Styles>
+    </Styles>
     
     )
 }
 
 
-function Item(props) {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => setIsOpen(!isOpen);
-    
-
-    return (
-      <motion.li  onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-        <motion.div  > <h2> <img src={props.img} style={{width:'10%'}}/>       {props.title}</h2><h6>{props.duration}</h6> </motion.div>
-        <AnimatePresence>{isOpen && Content(props)}</AnimatePresence>
-      </motion.li>
-    );
-  }
-  
-  function Content(props) {
-    return (
-      <motion.div
-        
-        initial={{  opacity: 0 }}
-        animate={{  opacity: 1 }}
-        exit={{ opacity: 0 }}
-      > 
-        
-        <div style={{fontWeight:"bold"}}> {props.name}</div>
-        
-        {props.description}
-        
-        
-      </motion.div>
-    );
-  }
   

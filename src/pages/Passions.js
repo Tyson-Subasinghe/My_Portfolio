@@ -13,6 +13,7 @@ import facebook from '../assets/facebook.png';
 import phone from '../assets/phone.png';
 import email from '../assets/email.png';
 import {ImageBox} from '../components/imageBox/imageBox';
+import {isBrowser, isMobile} from "react-device-detect";
 
 
 
@@ -23,10 +24,43 @@ const Styles = styled.div`
 .background{
   z-index: -3;
   position: absolute;
-  
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
   background-repeat: no-repeat;
+
   
+  
+}
+
+
+  
+.imageBoxContainer {
+  position: absolute;
+  
+  display: grid;
+  overflow: show;
+  margin: 0;
+  list-style: none;
+  
+  ${isMobile ? 
+  `
+  top: calc(25% + 5vh);
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
+  `
+  :
+  `
+  top: calc(30%);
+  grid-template-columns:  repeat(4, 1fr); 
+  grid-template-rows: repeat(1, 1fr);
+  `
+  }
+
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
 }
 `;
 
@@ -48,42 +82,52 @@ export const Passions = () => {
               
               
 
-              <motion.div className="background">
+              <motion.div className="background" >
                 
-                
+               
                 <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
                     <h1>PASSIONS</h1>
                 </FloatInAnimation>
 
-      
-                <ImageBox image={tealShoe}/>
-                <ImageBox image={github}/>
-                <ImageBox image={linkedin}/>
-                <ImageBox image={facebook}/>
-                <ImageBox image={phone}/>
-                <ImageBox image={email}/>
-                
+
+            
+            <motion.div className="imageBoxContainer"
+                initial={{
+                  opacity: 0,
+                  y: 50,
+              }}
+              animate={{
+                  opacity: 1,
+                  y: 1,
+              }}
+              transition={{
+                  delay: 0.1,
+                  duration: 0.5,
+              }}
+            >
+              <AnimateSharedLayout type="crossfade">
+                        
+                            
+                        
+
+                        
+                  {educationHistoryList.map((item) => (
+                                <>{<ImageBox className="imageBox" image={item.img} delay={0.1}/>}</>
+                                ))}
+
+              </AnimateSharedLayout>
+
+              </motion.div>
+
+
+
                     
-
-                
-
-
-                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <h1>PASSIONS https://www.facebook.com/tyson3141592653589793238462</h1>
-                </FloatInAnimation>
 
                 
       
                 
                 <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <AnimateSharedLayout type="crossfade">
-                        <motion.ul  initial={{ borderRadius: 25 }}>
-                            {educationHistoryList.map((item) => (
-                            <>{Item(item)}</>
-                            ))}
-                        </motion.ul>
-
-                    </AnimateSharedLayout>
+                    
 
                 </FloatInAnimation>
 

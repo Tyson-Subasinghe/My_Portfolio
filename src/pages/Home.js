@@ -68,7 +68,6 @@ const Styles = styled.div`
     .background{
         z-index: -3;
         position: absolute;
-        display: flex;
         justify-content: center;
         align-items: center;
         width: 100vw;
