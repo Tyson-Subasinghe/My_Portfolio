@@ -9,7 +9,7 @@ export const FloatInAnimation = (props) => {
 
     return(
 
-        <motion.div 
+        <motion.div
         layout
         
         initial={{
@@ -21,6 +21,7 @@ export const FloatInAnimation = (props) => {
             y: inView ? 0 : props.yOffset,
         }}
         transition={{
+            delay: props.delay,
             duration: props.duration
         }}>
 

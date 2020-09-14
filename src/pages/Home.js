@@ -15,6 +15,8 @@ const Styles = styled.div`
     .shoe{
         position: relative;
         z-index: -1;
+        width: 80vmin;
+        mouseEvents: none;
     }
 
     .textLeft{
@@ -114,7 +116,7 @@ export const Home = () => {
                         }}>
                             
 
-                            <img src={tealShoe} style={{width:"80vmin", mouseEvents:"none"}} className="shoe"/>
+                            <img src={tealShoe} style={{}} className="shoe"/>
                             
                         </motion.div>
                     </motion.div>

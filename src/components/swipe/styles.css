@@ -6,18 +6,33 @@
   
   .prompt1 {
     position: absolute;
-    top: calc(150px / 2);
+    top: calc(10%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .prompt {
+  .prompt2 {
     position: absolute;
-    top: calc(1000px / 2);
+    top: calc(60%);
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .imageBoxes {
+    position: absolute;
+    top: calc(25%);
+    display: grid;
+    overflow: show;
+    margin: 0;
+    list-style: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
   }
 
   .box {

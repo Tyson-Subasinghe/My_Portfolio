@@ -16,6 +16,16 @@ const Styles = styled.div`
 
 
 
+.background{
+  z-index: -3;
+  position: absolute;
+  
+  background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
+  background-repeat: no-repeat;
+  
+}
+
+
 `;
 
 
@@ -28,18 +38,17 @@ export const Experience = () => {
             <Styles>
 
               <motion.div className="background">
-
+                
+                
                 <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
                     <h1>Professional History</h1>
                 </FloatInAnimation>
-
-                
       
                 
                 <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
 
                     <AnimateSharedLayout type="crossfade">
-                        <motion.ul layout initial={{ borderRadius: 25 }}>
+                        <motion.ul  initial={{ borderRadius: 25 }}>
                             {workHistoryList.map((item) => (
                             <>{Item(item)}</>
                             ))}
@@ -55,14 +64,21 @@ export const Experience = () => {
       
                 
                 <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <AnimateSharedLayout>
-                        <motion.ul layout initial={{ borderRadius: 25 }}>
+                    <AnimateSharedLayout type="crossfade">
+                        <motion.ul  initial={{ borderRadius: 25 }}>
                             {educationHistoryList.map((item) => (
                             <>{Item(item)}</>
                             ))}
                         </motion.ul>
+
                     </AnimateSharedLayout>
+
                 </FloatInAnimation>
+
+
+
+                               
+                
                             
 
 
@@ -81,8 +97,8 @@ function Item(props) {
     
 
     return (
-      <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-        <motion.div layout > <h2> <img src={props.img} style={{width:'10%'}}/>       {props.title}</h2><h6>{props.duration}</h6> </motion.div>
+      <motion.li  onClick={toggleOpen} initial={{ borderRadius: 10 }}>
+        <motion.div  > <h2> <img src={props.img} style={{width:'10%'}}/>       {props.title}</h2><h6>{props.duration}</h6> </motion.div>
         <AnimatePresence>{isOpen && Content(props)}</AnimatePresence>
       </motion.li>
     );

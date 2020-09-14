@@ -1,6 +1,16 @@
 import * as React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import './styles.css';
+import github from './github.png';
+import linkedin from './linkedin.png';
+import facebook from './facebook.png';
+import phone from './phone.png';
+import email from './email.png';
+import {ImageBox} from '../imageBox/imageBox';
+
+
+
+
 
 export const Swipe = () => {
   const x = useMotionValue(0);
@@ -20,47 +30,72 @@ export const Swipe = () => {
   const crossPathB = useTransform(x, [-50, -100], [0, 1]);
 
   return (
-    <motion.div className="example-container" style={{ background }}>
+    
+      <motion.div className="example-container" style={{ background }}>
 
-      <motion.div className="prompt1" style={{zIndex:1}}><h1>Get in touch</h1></motion.div>
-      
-      <motion.div className="prompt" style={{zIndex:1}}><h2>Swipe left or right on me!</h2></motion.div>
-
-      <motion.div
-        className="box"
-        style={{ x }}
-        drag="x"
-        dragConstraints={{ left: 0, right: 0 }}
-      >
+        <motion.div className="prompt1" style={{zIndex:1}}><h1>Click an icon to get in touch</h1></motion.div>
         
-        <svg className="progress-icon" viewBox="0 0 50 50">
+        <motion.div className="imageBoxes"
+            initial={{
+              opacity: 0,
+              y: 50,
+          }}
+          animate={{
+              opacity: 1,
+              y: 1,
+          }}
+          transition={{
+              delay: 0.1,
+              duration: 0.5,
+          }}
+        >
+          <ImageBox image={github} delay={0.1}/>
+          <ImageBox image={linkedin} delay={0.2}/>
+          <ImageBox image={facebook} delay={0.3}/>
+          <ImageBox image={phone} delay={0.4}/>
+          <ImageBox image={email} delay={0.5}/>
+        </motion.div>
+
+        <motion.div className="prompt2" style={{zIndex:1}}><h2>or swipe left or right on me!</h2></motion.div>
+
+        
+
+        <motion.div
+          className="box"
+          style={{ x }}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+        >
           
-          <motion.path
-            fill="none"
-            strokeWidth="2"
-            stroke={color}
-            d="M14,26 L 22,33 L 35,16"
-            strokeDasharray="0 1"
-            style={{ pathLength: tickPath }}
-          />
-          <motion.path
-            fill="none"
-            strokeWidth="2"
-            stroke={color}
-            d="M17,17 L33,33"
-            strokeDasharray="0 1"
-            style={{ pathLength: crossPathA }}
-          />
-          <motion.path
-            fill="none"
-            strokeWidth="2"
-            stroke={color}
-            d="M33,17 L17,33"
-            strokeDasharray="0 1"
-            style={{ pathLength: crossPathB }}
-          />
-        </svg>
+          <svg className="progress-icon" viewBox="0 0 50 50">
+            
+            <motion.path
+              fill="none"
+              strokeWidth="2"
+              stroke={color}
+              d="M14,26 L 22,33 L 35,16"
+              strokeDasharray="0 1"
+              style={{ pathLength: tickPath }}
+            />
+            <motion.path
+              fill="none"
+              strokeWidth="2"
+              stroke={color}
+              d="M17,17 L33,33"
+              strokeDasharray="0 1"
+              style={{ pathLength: crossPathA }}
+            />
+            <motion.path
+              fill="none"
+              strokeWidth="2"
+              stroke={color}
+              d="M33,17 L17,33"
+              strokeDasharray="0 1"
+              style={{ pathLength: crossPathB }}
+            />
+          </svg>
+        </motion.div>
       </motion.div>
-    </motion.div>
+   
   );
 };

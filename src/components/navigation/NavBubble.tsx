@@ -34,7 +34,7 @@ nav {
     -ms-user-select: none;
     cursor: pointer;
     position: absolute;
-    top: 18px;
+    top: 15px;
     left: 15px;
     width: 50px;
     height: 50px;

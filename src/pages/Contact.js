@@ -8,7 +8,7 @@ export const Contact = () => {
 
   return (
       <>
-      <Swipe></Swipe>
+      <Swipe/>
       <Refresh></Refresh>
       </>
   );

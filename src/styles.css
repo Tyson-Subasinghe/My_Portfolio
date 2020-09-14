@@ -1,8 +1,6 @@
 html,
 
-* {
-  box-sizing: border-box;
-}
+
 
 body {
   background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
