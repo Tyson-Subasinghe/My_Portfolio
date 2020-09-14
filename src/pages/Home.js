@@ -61,10 +61,6 @@ export const Home = () => {
     return(
     
 
-       
-            
-            
-
             
                 <Styles>
                     
