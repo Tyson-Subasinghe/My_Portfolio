@@ -61,8 +61,9 @@ export const ImageBox = (props) => {
             drag
             dragConstraints = {containerRef}
             className="container">
-
+                <a href={props.link} draggable="false"> 
                 <img ref={ref} src={props.image} className="containerImage" draggable="false"/>
+                </a>
 
             </motion.div>
         </Styles>

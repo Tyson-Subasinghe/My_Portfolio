@@ -49,14 +49,13 @@ export const Swipe = () => {
               duration: 0.5,
           }}
         >
-          <ImageBox image={github} delay={0.1}/>
-          <ImageBox image={linkedin} delay={0.2}/>
-          <ImageBox image={facebook} delay={0.3}/>
-          <ImageBox image={phone} delay={0.4}/>
-          <ImageBox image={email} delay={0.5}/>
+          <ImageBox image={github} link={"https://github.com/Tyson-Subasinghe"} delay={0.1}/>
+          <ImageBox image={linkedin} link={"https://www.linkedin.com/in/tyson161828/"} delay={0.2}/>
+          <ImageBox image={phone} link={"tel:+61478138575"}  delay={0.3}/>
+          <ImageBox image={email} link={"mailto:tysonsubasinghe@gmail.com?subject=Hello!"} delay={0.4}/>
         </motion.div>
 
-        <motion.div className="prompt2" style={{zIndex:1}}><h2>or swipe left or right on me!</h2></motion.div>
+        <motion.div className="prompt2" style={{zIndex:1}}><h2>or just swipe left or right on me!</h2></motion.div>
 
         
 
