@@ -8,14 +8,19 @@ import styled from 'styled-components';
 
 const Styles = styled.div`
 
+.background{
+  background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
+  width: 100vw; 
+  height: 100vh;
+}
+
 .container {
   display: flex;
-  overflow: wrap;
+  overflow: hidden;
   justify-content: center;
   align-items: center;
   width: 100vw; 
   height: 100vh;
-  background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
 }
 
 
@@ -99,6 +104,8 @@ export const NoMatch = () => {
     return(
 
         <Styles>
+          <div className="background">
+             
           <motion.div className="container" >
               
               <div>
@@ -125,5 +132,6 @@ export const NoMatch = () => {
               }}/>
 
           </motion.div>
+          </div>
         </Styles>
 )}

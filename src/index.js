@@ -8,6 +8,8 @@ import './fonts/CharlieText-Thin.ttf';
 import './fonts/CharlieText-Bold.ttf';
 import './fonts/CharlieText-Light.ttf';
 import './fonts/ITCAvantGardeStd-Demi.otf';
+import './fonts/Plateia-Bold.ttf';
+import './fonts/SF-UI-Display-Light.otf';
 
 
 

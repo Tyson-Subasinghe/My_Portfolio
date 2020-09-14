@@ -12,7 +12,7 @@ import linkedin from '../assets/linkedin.png';
 import facebook from '../assets/facebook.png';
 import phone from '../assets/phone.png';
 import email from '../assets/email.png';
-import {ImageBox} from '../components/imageBox/imageBox';
+import {ImageBox} from '../components/boxes/imageBox';
 import {isBrowser, isMobile} from "react-device-detect";
 
 

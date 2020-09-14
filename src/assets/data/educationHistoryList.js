@@ -6,7 +6,7 @@ const educationHistoryList =[
     title: 'B. CompSci (Artificial Intelligence)',
     duration: 'Class of 2020',
     description: 'Commerce/CompSci double degree - 72.3 WAM',
-    
+    id: '101',
     },
     {
     
@@ -15,7 +15,7 @@ const educationHistoryList =[
     title: 'B. Com (Finance)',
     duration: 'Class of 2020',
     description: 'Commerce/CompSci double degree - 72.3 WAM',
-    
+    id: '102',
     },
 
     {
@@ -24,7 +24,7 @@ const educationHistoryList =[
     title: 'Cert. IV (FNS40815)',
     duration: 'Class of 2018',
     description: 'Certificate IV in Finance & Mortgage Broking',
-    
+    id: '103',
     },
 
     
@@ -35,7 +35,7 @@ const educationHistoryList =[
     title: 'HSC All Rounder (99.40)',
     duration: 'Class of 2016',
     description: 'Extension 2 Mathematics (94), Extension 1 Mathematics (98), Physics (94), Biology (94), Chemistry (93), Advanced English (89) & UMAT (100 percentile)',
-    
+    id: '104',
     },
     
 

@@ -63,6 +63,13 @@ code {
   src: local('Charlie'), url(./fonts/Plateia-Bold.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'SF-UI';
+  src: local('Charlie'), url(./fonts/SF-UI-Display-Light.otf) format('opentype');
+}
+
+
+
 
 
 ::selection {

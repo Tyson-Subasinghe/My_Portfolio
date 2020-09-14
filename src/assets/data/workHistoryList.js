@@ -10,7 +10,7 @@ const workHistoryList =[
         
       },
       {
-        img: 'https://mc.ubookr.io/assets/images/MC-Logo_1-p-500x174.png',
+        img: 'https://i.ibb.co/L088Ww4/Mortgage-Choice.png',
         name: 'Mortgage Choice',
         title: 'Mortgage Broker',
         duration: 'Jul 2017 –> Jan 2019',

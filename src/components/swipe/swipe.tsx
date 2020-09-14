@@ -6,7 +6,7 @@ import linkedin from './linkedin.png';
 import facebook from './facebook.png';
 import phone from './phone.png';
 import email from './email.png';
-import {ImageBox} from '../imageBox/imageBox';
+import {ImageBox} from '../boxes/imageBox';
 import {isBrowser, isMobile} from "react-device-detect";
 import styled from 'styled-components';
 
@@ -73,7 +73,6 @@ import styled from 'styled-components';
   
   .imageBoxContainer {
     position: absolute;
-    
     display: grid;
     overflow: show;
     margin: 0;
@@ -168,7 +167,7 @@ export const Swipe = () => {
         <motion.div className="example-container" style={{ background }}>
             
             <motion.div className="prompt1">
-                Tap on an icon
+                Get in touch
             </motion.div>
             
             <motion.div className="imageBoxContainer"
