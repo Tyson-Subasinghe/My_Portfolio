@@ -130,15 +130,6 @@ import styled from 'styled-components';
   }
   
 
-  ${isMobile ? 
-    `
-    MOBILE STYLING
-    `
-    :
-    `
-    DESKTOP STYLING
-    `
-    }
   
 `;
 

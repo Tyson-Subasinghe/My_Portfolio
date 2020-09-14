@@ -7,6 +7,7 @@ import tealShoe from '../assets/tealShoe.png';
 import { useInView } from 'react-intersection-observer';
 import {FloatInAnimation} from '../components/FloatInAnimation';
 import {rickLogo} from '../assets/tealShoe.png'
+import {isBrowser, isMobile} from "react-device-detect";
 
 
 
@@ -19,9 +20,21 @@ const Styles = styled.div`
         mouseEvents: none;
     }
 
+
     .textLeft{
         position: absolute;
-        top: calc(40%);
+        font-family: "ITCAvantGardeStd";
+        ${isMobile ? `
+            top: calc(45%);
+            font-size: calc(5vh);
+            `
+            :
+            `
+            top: calc(40%);
+            font-size: calc(10vh);
+            `
+            }
+        
         right: calc(50%);
         overflow: hidden;
         justify-content: center;
@@ -32,7 +45,18 @@ const Styles = styled.div`
 
     .textRight{
         position: absolute;
-        top: calc(40%);
+        font-family: "Plateia";
+        ${isMobile ? `
+            top: calc(45% - 1px);
+            font-size: calc(4vh);
+            `
+            :
+            `
+            top: calc(40%);
+            font-size: calc(8vh);
+            `
+            }
+        
         left: calc(50%);
         overflow: hidden;
         justify-content: center;
@@ -81,39 +105,31 @@ export const Home = () => {
                                     
                             
                             
-                            <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap', fontFamily: "ITCAvantGardeStd", fontSize: "10vh"}}>
-                                <Marquee  hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
+                            <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
+                                <Marquee hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
                             </div>
 
-                            <div className="textRight" style={{ width: '50vw', whiteSpace: 'nowrap', fontFamily: "Plateia", fontSize: "8vh"}}>
-                                <Marquee  hoverToStop={true} loop={true} text="Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  "/>
+                            <div className="textRight" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
+                                <Marquee hoverToStop={true} loop={true} text="Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  "/>
                             </div>
 
                         </motion.div>
                         
-                       
-                    
-
                         <motion.div 
                         initial={{
                             opacity: 0,
                             y: 100,
                             rotate: -10
                         }}
-                        
                         animate={{
                             opacity: 1,
                             y: 0,
                             rotate:0
                         }}
-
                         transition={{
                             duration: 1
                         }}>
-                            
-
-                            <img src={tealShoe} style={{}} className="shoe"/>
-                            
+                            <img src={tealShoe}  className="shoe"/>
                         </motion.div>
                     </motion.div>
 

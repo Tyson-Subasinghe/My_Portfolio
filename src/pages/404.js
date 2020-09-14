@@ -26,16 +26,65 @@ const Styles = styled.div`
   width: 150px;
   height: 150px;
   position: absolute;
-  top: calc(50% - 150px / 2);
-  left: calc(50% - 150px / 2);
+  
   display: flex;
   justify-content: center;
   align-items: center;
+
+  ${isMobile ? 
+    `
+    top: calc(92% - 150px);
+    left: calc(50% - 150px / 2);
+    `
+    :
+    `
+    top: calc(92% - 150px);
+    left: calc(50% - 150px / 2);
+    `
+    }
+}
+
+.toptext{
+  
+  
+  ${isMobile ? 
+    `
+    top: calc(12%);
+    font-size: calc(5vh + 2px);
+    font-weight: bold;
+    `
+    :
+    `
+    top: calc(10%);
+    font-size: calc(4vw + 10px);
+    font-weight: bold;
+    
+    `
+    }
+  
+  
+
+}
+
+.subtext{
+  
+
+  ${isMobile ? 
+    `
+    top: calc(70%);
+    font-size: calc(3vh + 2px);
+    `
+    :
+    `
+    top: calc(62%);
+    font-size: calc(2vw + 5px);
+    `
+    }
+
+  
 }
 
 `;
-
-
 
 
 
@@ -53,10 +102,10 @@ export const NoMatch = () => {
           <motion.div className="container" >
               
               <div>
-                <h1>Four Hundred and Four</h1>
+                <p className="toptext">Four Hundred and Four</p>
                 <p> </p>
-                <p>What did you expect? :)</p>
-                <p>Here is a shape to play with</p>
+                <p className="subtext">What did you expect? :)</p>
+                <p className="subtext">Here is a shape to play with</p>
               </div>
               
 
@@ -66,7 +115,7 @@ export const NoMatch = () => {
               <motion.div className="ball"
               ref = {ballRef}
               drag
-              dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh/2 + 75), bottom: (vh/2 - 75)}}
+              dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh*0.92 + 150), bottom: (vh*0.08)}}
               style={{ x }}
               whileHover={{ scale: 1.2, rotate: 90 }}
               whileTap={{

@@ -23,7 +23,7 @@ nav {
     left: 0;
     bottom: 0;
     width: 300px;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.95);
   }
   
   button {
