@@ -13,7 +13,7 @@ import fourohfour from './404.svg';
 
 
 
-const colors = [home,history,projects,passions,contact,fourohfour];
+const icons = [home,history,projects,passions,contact,fourohfour];
 
 
 const variants = {
@@ -38,7 +38,8 @@ const variants = {
 
 
 export const MenuItem = ({ i }) => {
-  const style = {};
+  
+
   
   return (
     <NavLink href={i.url} style={{color:"#000000"}} >
@@ -48,8 +49,8 @@ export const MenuItem = ({ i }) => {
         whileTap={{ scale: 0.95 }}
       >
         
-        <div className="icon-placeholder" style={style}><img src={colors[i.number-1]} style={{width:'25px' }}/></div>
-        <div className="text-placeholder" style={style}>{i.title}</div>
+        <div className="icon-placeholder" ><img src={icons[i.number-1]} style={{width:'25px' }}/></div>
+        <div className="text-placeholder" style={{fontFamily: "ITCAvantGardeStd"}}>{i.title}</div>
         
       </motion.li>
     </NavLink>

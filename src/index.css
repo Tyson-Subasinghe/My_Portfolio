@@ -1,19 +1,19 @@
 body {
   margin: 0;
-  font-family: 'CharlieText-Light';
+  font-family: 'ITCAvantGardeStd';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-family: 'CharlieText-Regular';
+  font-family: 'ITCAvantGardeStd';
   font-weight: bold;
   color: #000000;
   
 }
 
 h2 {
-  font-family: 'CharlieText-Thin';
+  font-family: 'ITCAvantGardeStd';
   font-weight: 200;
   color: #000000;
 }

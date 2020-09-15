@@ -51,7 +51,7 @@ const Styles = styled.div`
 
 .toptext{
   
-  
+  font-family: ITCAvantGardeStd;
   ${isMobile ? 
     `
     top: calc(12%);
@@ -73,7 +73,7 @@ const Styles = styled.div`
 
 .subtext{
   
-
+  font-family: ITCAvantGardeStd;
   ${isMobile ? 
     `
     top: calc(70%);

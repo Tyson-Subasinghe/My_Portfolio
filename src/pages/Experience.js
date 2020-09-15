@@ -191,7 +191,7 @@ const Styles = styled.div`
 
 .titleHeading{
 
-  
+  font-family: ITCAvantGardeStd;
   position: absolute;
   z-index: 1;
   font-weight: bold;

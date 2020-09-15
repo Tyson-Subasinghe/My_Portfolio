@@ -25,6 +25,7 @@ import styled from 'styled-components';
   
   
   .prompt1 {
+    font-family: ITCAvantGardeStd;
     position: absolute;
     z-index: 1;
     ${isMobile ? 
@@ -48,6 +49,7 @@ import styled from 'styled-components';
   }
 
   .prompt2 {
+    font-family: ITCAvantGardeStd;
     position: absolute;
 
     ${isMobile ? 
