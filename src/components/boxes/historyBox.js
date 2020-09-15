@@ -73,7 +73,7 @@ export const HistoryBox = (props) => {
         
         <Styles>
             <motion.div 
-                whileHover={{ scale: 1.1 }}
+                
                 initial={{
                     opacity: 0,
                     y: 50,
@@ -81,6 +81,12 @@ export const HistoryBox = (props) => {
                 animate={{
                     opacity: inView ? 1 : 0,
                     y: inView ? 0 : 50,
+                    
+                    
+                }}
+                transition={{
+                    delay: 0.5+props.delay,
+                    duration: 0.35
                 }}
             ref = {containerRef}
             drag
@@ -88,7 +94,8 @@ export const HistoryBox = (props) => {
             className="container">
 
                 <a href={props.link} draggable="false"> 
-                <img ref={ref} src={props.image} className="containerImage" draggable="false"/>
+                
+                <motion.img whileHover={{ scale: 1.1 }} ref={ref} src={props.image} className="containerImage" draggable="false"/>
                 </a>
 
             </motion.div>

@@ -7,7 +7,7 @@ import {FloatInAnimation} from '../components/FloatInAnimation';
 import workHistoryList from "../assets/data/workHistoryList";
 import educationHistoryList from "../assets/data/educationHistoryList";
 import {HistoryBox} from '../components/boxes/historyBox';
-import {isBrowser, isMobile} from "react-device-detect";
+import {isBrowser, isMobile, MobileView, BrowserView} from "react-device-detect";
 
 
 const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
@@ -44,9 +44,9 @@ const Styles = styled.div`
 .overlay{
   z-index: 3;
   position: absolute;
-  top: 10vh;
+  top: 20vh;
   left: 10vw;
-  height: 80vh;
+  height: 60vh;
   width: 80vw;
   border-radius: 5vh;
   background: rgba(255, 255, 255, 0.9);
@@ -58,7 +58,7 @@ const Styles = styled.div`
   position: absolute;
   top: 5vh;
   left: 5vw;
-  height: 70vh;
+  height: 50vh;
   width: 70vw;
   justify-content: center;
   align-items: center;
@@ -66,11 +66,135 @@ const Styles = styled.div`
         
 }
 
+.line1{
+  
+  font-family: "SF-UI";
+  position: relative;
+    z-index: 1;
+    ${isMobile ? 
+      `
+      
+      font-size: calc(3.5vh + 1px);
+      font-weight: bold;
+      `
+      :
+      `
+      
+      font-size: calc(3vw + 5px);
+      font-weight: bold;
+      justify-content: center;
+      align-items: center;
+      
+      `
+      }
+    
+    display: flex;
+    
+
+}
+
+.line2{
+  
+  font-family: "SF-UI";
+  position: relative;
+    z-index: 1;
+    ${isMobile ? 
+      `
+      
+      font-size: calc(2vh + 1px);
+      font-weight: bold;
+      `
+      :
+      `
+      
+      font-size: calc(2vw + 1px);
+      font-weight: bold;
+      
+      `
+      }
+    
+    display: flex;
+    margin-top: 2%;
+    
+
+}
+
+.line3{
+  
+  font-family: "SF-UI";
+  position: relative;
+    z-index: 1;
+    ${isMobile ? 
+      `
+      
+      font-size: calc(2vh + 1px);
+      font-weight: bold;
+      `
+      :
+      `
+      
+      font-size: calc(2vw + 1px);
+      font-weight: bold;
+      
+      `
+      }
+      
+    display: flex;
+    margin-top: 1%;
+    
+
+}
+
+.line4{
+  
+  font-family: "SF-UI";
+  position: relative;
+    z-index: 1;
+    ${isMobile ? 
+      `
+      
+      font-size: calc(2.5vh + 1px);
+      font-weight: bold;
+      `
+      :
+      `
+      
+      font-size: calc(2vw + 5px);
+      font-weight: bold;
+      
+      `
+      }
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+}
+
+
+.button {
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: -3vw;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: transparent;
+}
+
 .titleHeading{
 
   
   position: absolute;
   z-index: 1;
+  font-weight: bold;
   ${isMobile ? 
     `
     top: calc(2%);
@@ -205,6 +329,8 @@ const Styles = styled.div`
 
 
 
+
+
 `;
 
 
@@ -262,29 +388,69 @@ export const Experience = () => {
             transition={{delay: 0, duration: 0.5}}
             >
             {selectedId<100 && <>
-              <h1>{workHistoryList[selectedId-1].name}</h1>
-              <h2>{workHistoryList[selectedId-1].title}</h2>
-              <h2>{workHistoryList[selectedId-1].duration}</h2>
-              <h3>{workHistoryList[selectedId-1].description}</h3>
-              <button onClick={() => {
-                setContentOpacity(0);
-                setTimeout(function(){setContentOpacity(1)}, 500);
-                setTimeout(function(){setSelectedId(null)}, 500);
-                }} 
-            style={{height:"30px", width:"30px", borderRadius: "50%"}} />
+              <div className="line1">{workHistoryList[selectedId-1].name}</div>
+              <div className="line2">{workHistoryList[selectedId-1].title}</div>
+              <div className="line3">{workHistoryList[selectedId-1].duration}</div>
+              <div className="line4">{workHistoryList[selectedId-1].description}</div>
+              <BrowserView>
+                  <button style={{zIndex:5}} className="button"
+                  onClick={() => {
+                    setContentOpacity(0);
+                    setTimeout(function(){setContentOpacity(1)}, 500);
+                    setTimeout(function(){setSelectedId(null)}, 500);
+                    }} >
+                  <svg width="43" height="43" viewBox="0 0 33 33">
+                      <path
+                        fill="transparent"
+                        strokeWidth="3"
+                        stroke="hsl(0, 0%, 18%)"
+                        strokeLinecap="round"
+                        d="M 3 16.5 L 17 2.5" 
+                      />                
+                      <path
+                        fill="transparent"
+                        strokeWidth="3"
+                        stroke="hsl(0, 0%, 18%)"
+                        strokeLinecap="round"
+                        d= "M 3 2.5 L 17 16.346"
+                      />                
+                  </svg>
+                  </button>
+              </BrowserView>
+              
+            
             </>
             }
             {selectedId>100 && <>
-              <h1>{educationHistoryList[selectedId-101].name}</h1>
-              <h2>{educationHistoryList[selectedId-101].title}</h2>
-              <h2>{educationHistoryList[selectedId-101].duration}</h2>
-              <h3>{educationHistoryList[selectedId-101].description}</h3>
-              <button onClick={() => {
-                setContentOpacity(0);
-                setTimeout(function(){setContentOpacity(1)}, 500);
-                setTimeout(function(){setSelectedId(null)}, 500);
-                }} 
-            style={{height:"30px", width:"30px", borderRadius: "50%"}} />
+              <div className="line1">{educationHistoryList[selectedId-101].name}</div>
+              <div className="line2">{educationHistoryList[selectedId-101].title}</div>
+              <div className="line3">{educationHistoryList[selectedId-101].duration}</div>
+              <div className="line4">{educationHistoryList[selectedId-101].description}</div>
+              <BrowserView>
+                  <button style={{zIndex:5}} className="button"
+                  onClick={() => {
+                    setContentOpacity(0);
+                    setTimeout(function(){setContentOpacity(1)}, 500);
+                    setTimeout(function(){setSelectedId(null)}, 500);
+                    }} >
+                  <svg width="43" height="43" viewBox="0 0 33 33">
+                      <path
+                        fill="transparent"
+                        strokeWidth="3"
+                        stroke="hsl(0, 0%, 18%)"
+                        strokeLinecap="round"
+                        d="M 3 16.5 L 17 2.5" 
+                      />                
+                      <path
+                        fill="transparent"
+                        strokeWidth="3"
+                        stroke="hsl(0, 0%, 18%)"
+                        strokeLinecap="round"
+                        d= "M 3 2.5 L 17 16.346"
+                      />                
+                  </svg>
+                  </button>
+              </BrowserView>
             </>
             }
             </motion.div>
@@ -314,7 +480,7 @@ export const Experience = () => {
 
 
           <div className="titleHeading">
-             <h1>👆 an icon</h1>
+             👆 an icon
           </div>
           <div className="titleWork">
               Employment
