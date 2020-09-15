@@ -40,7 +40,7 @@ const Styles = styled.div`
     `
     
     font-size: calc(6vw);
-    left: calc(38vw);
+    left: calc(35vw);
     
     `
     }

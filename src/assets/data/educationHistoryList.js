@@ -32,7 +32,7 @@ const educationHistoryList =[
     {
     img: 'https://i.ibb.co/ZKzXPwN/HAHS-logo.png',
     name: 'Hurlstone Agricultural High School',
-    title: 'HSC All Rounder (99.40)',
+    title: 'HSC High Achievers List (99.40)',
     duration: 'Class of 2016',
     description: 'Extension 2 Mathematics (94), Extension 1 Mathematics (98), Physics (94), Biology (94), Chemistry (93), Advanced English (89) & UMAT (100 percentile)',
     id: '104',

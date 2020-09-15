@@ -20,7 +20,16 @@ const Styles = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 200vh;
+  ${isMobile ? 
+    `    
+    height: 250vh;
+    `
+    :
+    `
+    height: 200vh;
+    `
+    }
+  
   background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 50%, rgb(116, 173, 185) 100%);
   
   display: flex;
@@ -83,13 +92,23 @@ const Styles = styled.div`
     `
     :
     `
-    font-size: calc(1.5vw + 3.75px);
+    font-size: calc(1vw + 3px);
     
     `
     }
 }
 .subtitle{
-
+  ${isMobile ? 
+    `    
+    font-size: calc(2.5vh + 1px);
+    
+    `
+    :
+    `
+    font-size: calc(1.5vw + 3.75px);
+    
+    `
+    }
 }
 
 .description{
@@ -101,7 +120,7 @@ const Styles = styled.div`
     `
     :
     `
-    font-size: calc(1vw + 3.75px);
+    font-size: calc(1vw + 3px);
     
     `
     }

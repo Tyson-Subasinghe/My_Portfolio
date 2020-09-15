@@ -46,7 +46,7 @@ const Styles = styled.div`
   position: absolute;
   top: 20vh;
   left: 10vw;
-  height: 60vh;
+  height: 65vh;
   width: 80vw;
   border-radius: 5vh;
   background: rgba(255, 255, 255, 0.9);
@@ -68,7 +68,7 @@ const Styles = styled.div`
 
 .line1{
   
-  font-family: "SF-UI";
+
   position: relative;
     z-index: 1;
     ${isMobile ? 
@@ -95,7 +95,7 @@ const Styles = styled.div`
 
 .line2{
   
-  font-family: "SF-UI";
+
   position: relative;
     z-index: 1;
     ${isMobile ? 
@@ -121,7 +121,7 @@ const Styles = styled.div`
 
 .line3{
   
-  font-family: "SF-UI";
+
   position: relative;
     z-index: 1;
     ${isMobile ? 
@@ -147,7 +147,7 @@ const Styles = styled.div`
 
 .line4{
   
-  font-family: "SF-UI";
+
   position: relative;
     z-index: 1;
     ${isMobile ? 
