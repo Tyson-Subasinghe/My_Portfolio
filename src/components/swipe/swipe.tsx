@@ -1,11 +1,11 @@
 import * as React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-import github from './github.png';
-import linkedin from './linkedin.png';
-import facebook from './facebook.png';
-import phone from './phone.png';
-import email from './email.png';
+import github from '../../assets/github.png';
+import linkedin from '../../assets/linkedin.png';
+import facebook from '../../assets/facebook.png';
+import phone from '../../assets/phone.png';
+import email from '../../assets/email.png';
 import {ImageBox} from '../boxes/imageBox';
 import {isBrowser, isMobile} from "react-device-detect";
 import styled from 'styled-components';

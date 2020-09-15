@@ -2,12 +2,12 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Nav, Navbar, NavLink } from 'react-bootstrap';
 
-import home from './home.svg';
-import history from './history.svg';
-import projects from './projects.svg';
-import passions from './passions.svg';
-import contact from './contact.svg';
-import fourohfour from './404.svg';
+import home from '../../assets/home.svg';
+import history from '../../assets/history.svg';
+import projects from '../../assets/projects.svg';
+import passions from '../../assets/passions.svg';
+import contact from '../../assets/contact.svg';
+import fourohfour from '../../assets/404.svg';
 
 
 
