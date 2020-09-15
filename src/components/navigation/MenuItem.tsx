@@ -20,7 +20,7 @@ const variants = {
   open: {
     width: 200,
     y: 0,
-    zIndex: 10,
+    zIndex: 100,
     opacity: 1,
     transition: {
       y: { stiffness: 1000, velocity: -100 }
@@ -28,7 +28,7 @@ const variants = {
   },
   closed: {
     y: 50,
-    zIndex: 1,
+    zIndex: 10,
     opacity: 0,
     transition: {
       y: { stiffness: 1000 }
@@ -41,7 +41,7 @@ export const MenuItem = ({ i }) => {
   const style = {};
   
   return (
-    <NavLink href={i.url} style={{color:"#000000"}}>
+    <NavLink href={i.url} style={{color:"#000000"}} >
       <motion.li
         variants={variants}
         whileHover={{ scale: 1.1 }}

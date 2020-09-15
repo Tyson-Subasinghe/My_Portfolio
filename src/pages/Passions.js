@@ -1,19 +1,9 @@
 import React from 'react';
-import { useState, useRef } from "react";
+import { useState } from "react";
 import styled from 'styled-components';
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
-import "../styles.css";
-import {FloatInAnimation} from '../components/FloatInAnimation';
-import workHistoryList from "../assets/data/workHistoryList";
-import educationHistoryList from "../assets/data/educationHistoryList";
-import tealShoe from '../assets/tealShoe.png';
-import github from '../assets/github.png';
-import linkedin from '../assets/linkedin.png';
-import facebook from '../assets/facebook.png';
-import phone from '../assets/phone.png';
-import email from '../assets/email.png';
+import { motion } from "framer-motion";
 import {ImageBox} from '../components/boxes/imageBox';
-import {isBrowser, isMobile} from "react-device-detect";
+import {isBrowser, isMobile, BrowserView, MobileView} from "react-device-detect";
 
 
 
@@ -24,57 +14,106 @@ const Styles = styled.div`
 .background{
   z-index: -3;
   position: absolute;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%);
   background-repeat: no-repeat;
-
+  display: flex;
   
   
 }
 
-
-  
-.imageBoxContainer {
+.textNonHighlight{
+  font-family: "ITCAvantGardeStd";
   position: absolute;
-  
-  display: grid;
-  overflow: show;
-  margin: 0;
-  list-style: none;
+  z-index: 2;
   
   ${isMobile ? 
-  `
-  top: calc(25% + 5vh);
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, 1fr);
-  `
-  :
-  `
-  top: calc(30%);
-  grid-template-columns:  repeat(4, 1fr); 
-  grid-template-rows: repeat(1, 1fr);
-  `
-  }
-
-  gap: 15px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
+    `    
+    font-size: calc(6vh);
+    left: calc(25vw);
+    
+    `
+    :
+    `
+    
+    font-size: calc(6vw);
+    left: calc(38vw);
+    
+    `
+    }
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  
+  
+    
 }
+
+.textNonHighlight:hover{
+
+  ${isMobile ? 
+    `    
+    color: white;
+    -webkit-text-stroke-color: white;
+    
+    `
+    :
+    `
+    
+    color: black;
+    -webkit-text-stroke-color: black;
+    
+    `
+    }
+    
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    
+
+  
+}
+
+.imageHighlight{
+  position:absolute;
+  top:0;
+  z-index: 1;
+  ${isMobile ? 
+    `    
+    width: calc(30vh);
+    `
+    :
+    `
+    
+    width: calc(30vw);
+    
+    `
+    }
+  
+}
+
+
 `;
 
 
 
 const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
 
-
-
+const images = [
+  "https://i.ibb.co/3FFWgxx/Weights.png",
+  "https://i.ibb.co/KskkdNp/Futures.png",
+  "https://i.ibb.co/X2D8Gh1/Lambo.png",
+  "https://i.ibb.co/ZhBC1r7/royal-oak-15500st.png",
+  "https://i.ibb.co/GHFXqw3/Fashion.png",
+  "https://i.ibb.co/r2SBkyZ/book1.png"
+]
 
 export const Passions = () => {
     
-    const [selectedId, setSelectedId] = useState(null);
-
+    const [imageVisible,setImageVisible] = useState(0);
     
     return(
 
@@ -82,61 +121,77 @@ export const Passions = () => {
               
               
 
-              <motion.div className="background" >
+              <motion.div  >
+                
+
+                
                 
                
-                <FloatInAnimation duration={.25} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    <h1>PASSIONS</h1>
-                </FloatInAnimation>
+                
+                 
+
+                <BrowserView>
+                  <div className = "background" onMouseOver={()=>setImageVisible(0)}> </div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(1)} style={{top:"02vh"}}>Fitness</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(2)} style={{top:"17.6vh"}}>Sneakers</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(3)} style={{top:"33.2vh"}}>Cars</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(4)} style={{top:"48.8vh"}}>Watches</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(5)} style={{top:"64.4vh"}}>Fashion</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(6)} style={{top:"80vh"}}>Reading</div>
 
 
+
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==1 ? 1:0 ,}}>
+                  <img src = {images[0]} style={{ top: "02vh", left: "0vw"}} className="imageHighlight"/>
+                  </motion.div>
+                  <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible==2 ? 1:0 ,}}>
+                  <img src = {images[1]} style={{ top: "17.6vh", left: "70vw"}} className="imageHighlight"/>
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==3 ? 1:0 ,}}>
+                  <img src = {images[2]} style={{ top: "33.2vh", left: "1vw", }} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==4 ? 1:0 ,}}>
+                  <img src = {images[3]} style={{ top: "40.8vh", left: "70vw", width:"15vw"}} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==5 ? 1:0 ,}}>
+                  <img src = {images[4]} style={{ top: "42.8vh", left: "3vw", width: "25vw"}} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==6 ? 1:0 ,}}>
+                  <img src = {images[5]} style={{ top: "58.8vh", left: "70vw", width: "12vw"}} className="imageHighlight" />
+                  </motion.div>
+                </BrowserView>
+
+                <MobileView>
+                <div className = "background" onMouseOver={()=>setImageVisible(0)}> </div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(1)} style={{top:"07vh"}}>Fitness</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(2)} style={{top:"22.6vh"}}>Sneakers</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(3)} style={{top:"38.2vh"}}>Cars</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(4)} style={{top:"53.8vh"}}>Watches</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(5)} style={{top:"69.4vh", color: "black", webkitTextStrokeColor: "black"}}>Fashion</div>
+                  <div className="textNonHighlight" onMouseOver={()=>setImageVisible(6)} style={{top:"85vh"}}>Reading</div>
+
+
+
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==1 ? 1:0 ,}}>
+                  <img src = {images[0]} style={{ top: "0vh", left: "calc(15%)"}} className="imageHighlight"/>
+                  </motion.div>
+                  <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible==2 ? 1:0 ,}}>
+                  <img src = {images[1]} style={{ top: "13.6vh", left: "calc(20%)"}} className="imageHighlight"/>
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==3 ? 1:0 ,}}>
+                  <img src = {images[2]} style={{ top: "37.2vh", left: "calc(15%)", }} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==4 ? 1:0 ,}}>
+                  <img src = {images[3]} style={{ top: "45.8vh", left: "calc(35%)", width:"15vh"}} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==5 ? 1:0 ,}}>
+                  <img src = {images[4]} style={{ top: "53.8vh", left: "calc(17%)"}} className="imageHighlight" />
+                  </motion.div>
+                  <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==6 ? 1:0 ,}}>
+                  <img src = {images[5]} style={{ top: "68.8vh", left: "35vw", width: "16vh"}} className="imageHighlight" />
+                  </motion.div>
+                </MobileView>
             
-            <motion.div className="imageBoxContainer"
-                initial={{
-                  opacity: 0,
-                  y: 50,
-              }}
-              animate={{
-                  opacity: 1,
-                  y: 1,
-              }}
-              transition={{
-                  delay: 0.1,
-                  duration: 0.5,
-              }}
-            >
-              <AnimateSharedLayout type="crossfade">
-                        
-                            
-                        
-
-                        
-                  {educationHistoryList.map((item) => (
-                                <>{<ImageBox className="imageBox" image={item.img} delay={0.1}/>}</>
-                                ))}
-
-              </AnimateSharedLayout>
-
-              </motion.div>
-
-
-
-                    
-
-                
-      
-                
-                <FloatInAnimation duration={0.35} initialOpacity={0} finalOpacity={1} yOffset={50}>
-                    
-
-                </FloatInAnimation>
-
-
-
-                               
-                
-                            
-
 
               </motion.div>
 
@@ -144,37 +199,3 @@ export const Passions = () => {
     
     )
 }
-
-
-function Item(props) {
-
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleOpen = () => setIsOpen(!isOpen);
-    
-
-    return (
-      <motion.li  onClick={toggleOpen} initial={{ borderRadius: 10 }}>
-        <motion.div  > <h2> <img src={props.img} style={{width:'10%'}}/>       {props.title}</h2><h6>{props.duration}</h6> </motion.div>
-        <AnimatePresence>{isOpen && Content(props)}</AnimatePresence>
-      </motion.li>
-    );
-  }
-  
-  function Content(props) {
-    return (
-      <motion.div
-        
-        initial={{  opacity: 0 }}
-        animate={{  opacity: 1 }}
-        exit={{ opacity: 0 }}
-      > 
-        
-        <div style={{fontWeight:"bold"}}> {props.name}</div>
-        
-        {props.description}
-        
-        
-      </motion.div>
-    );
-  }
-  
