@@ -31,26 +31,6 @@ code {
     monospace;
 }
 
-@font-face {
-  font-family: 'Charlie';
-  src: local('Charlie'), url(./fonts/CharlieText-Regular.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Charlie';
-  src: local('Charlie'), url(./fonts/CharlieText-Light.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'Charlie';
-  src: local('Charlie'), url(./fonts/CharlieText-Thin.ttf) format('truetype');
-}
-
-
-@font-face {
-  font-family: 'Charlie';
-  src: local('Charlie'), url(./fonts/CharlieText-Bold.ttf) format('truetype');
-}
 
 @font-face {
   font-family: 'ITCAvantGardeStd';
@@ -61,11 +41,6 @@ code {
 @font-face {
   font-family: 'Plateia';
   src: local('Charlie'), url(./fonts/Plateia-Bold.ttf) format('truetype');
-}
-
-@font-face {
-  font-family: 'SF-UI';
-  src: local('Charlie'), url(./fonts/SF-UI-Display-Light.otf) format('opentype');
 }
 
 

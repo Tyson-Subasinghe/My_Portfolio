@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import "../styles.css";
 import {FloatInAnimation} from '../components/FloatInAnimation';
-import workHistoryList from "../assets/data/workHistoryList";
+import projectList from "../assets/data/projectList";
 import educationHistoryList from "../assets/data/educationHistoryList";
-import {HistoryBox} from '../components/boxes/historyBox';
+import {ProjectBox} from '../components/boxes/projectBox';
 import {isBrowser, isMobile, MobileView, BrowserView} from "react-device-detect";
 
 
@@ -46,7 +46,7 @@ const Styles = styled.div`
   position: absolute;
   top: 20vh;
   left: 10vw;
-  height: 60vh;
+  height: 70vh;
   width: 80vw;
   border-radius: 5vh;
   background: rgba(255, 255, 255, 0.9);
@@ -58,7 +58,7 @@ const Styles = styled.div`
   position: absolute;
   top: 5vh;
   left: 5vw;
-  height: 50vh;
+  height: 60vh;
   width: 70vw;
   justify-content: center;
   align-items: center;
@@ -242,7 +242,7 @@ const Styles = styled.div`
 
 
 
-.imageBoxContainerWork {
+.imageBoxContainerProjects {
   position: absolute;
   display: grid;
   overflow: show;
@@ -257,7 +257,7 @@ const Styles = styled.div`
   `
   :
   `
-  top: calc(30%);
+  top: calc(18%);
   grid-template-columns:  repeat(3, 1fr); 
   grid-template-rows: repeat(1, 1fr);
   `
@@ -267,6 +267,30 @@ const Styles = styled.div`
   padding: 15px;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50px;
+  
+}
+
+.decorativeContainer {
+  position: absolute;
+  ${isMobile ? 
+    `
+    width: 13vh;
+    height: 13vh;
+    margin: 0.7vh;
+   
+    `
+    :
+    `
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw;
+    
+    `
+    }
+  border-radius: 100%;
+  list-style: none;  
+  background: rgba(255, 255, 255, 0.2);
+  
 }
 
 
@@ -297,32 +321,6 @@ const Styles = styled.div`
 }
 
 
-.imageBoxContainerEducation {
-  position: absolute;
-  display: grid;
-  overflow: show;
-  margin: 0;
-  list-style: none;
-  
-  ${isMobile ? 
-  `
-  top: calc(60%);
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: repeat(2, 1fr);
-  `
-  :
-  `
-  top: calc(65%);
-  grid-template-columns:  repeat(4, 1fr); 
-  grid-template-rows: repeat(1, 1fr);
-  `
-  }
-
-  gap: 15px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50px;
-}
 
 
 
@@ -334,7 +332,7 @@ const Styles = styled.div`
 `;
 
 
-export const Experience = () => {
+export const Projects = () => {
     
   const [selectedId, setSelectedId] = useState(null);
   const [contentOpacity, setContentOpacity] = useState(1);
@@ -387,11 +385,12 @@ export const Experience = () => {
             }}
             transition={{delay: 0, duration: 0.5}}
             >
-            {selectedId<100 && <>
-              <div className="line1">{workHistoryList[selectedId-1].name}</div>
-              <div className="line2">{workHistoryList[selectedId-1].title}</div>
-              <div className="line3">{workHistoryList[selectedId-1].duration}</div>
-              <div className="line4">{workHistoryList[selectedId-1].description}</div>
+            
+              <div className="line1">{projectList[selectedId-1].title}</div>
+              <div className="line3">{projectList[selectedId-1].languages}</div>
+              <div className="line2">{projectList[selectedId-1].subtitle}</div>
+              <div className="line4">{projectList[selectedId-1].description}</div>
+              <a href={projectList[selectedId-1].link}>View on GitHub</a>
               <BrowserView>
                   <button style={{zIndex:5}} className="button"
                   onClick={() => {
@@ -419,40 +418,7 @@ export const Experience = () => {
               </BrowserView>
               
             
-            </>
-            }
-            {selectedId>100 && <>
-              <div className="line1">{educationHistoryList[selectedId-101].name}</div>
-              <div className="line2">{educationHistoryList[selectedId-101].title}</div>
-              <div className="line3">{educationHistoryList[selectedId-101].duration}</div>
-              <div className="line4">{educationHistoryList[selectedId-101].description}</div>
-              <BrowserView>
-                  <button style={{zIndex:5}} className="button"
-                  onClick={() => {
-                    setContentOpacity(0);
-                    setTimeout(function(){setContentOpacity(1)}, 500);
-                    setTimeout(function(){setSelectedId(null)}, 500);
-                    }} >
-                  <svg width="43" height="43" viewBox="0 0 33 33">
-                      <path
-                        fill="transparent"
-                        strokeWidth="3"
-                        stroke="hsl(0, 0%, 18%)"
-                        strokeLinecap="round"
-                        d="M 3 16.5 L 17 2.5" 
-                      />                
-                      <path
-                        fill="transparent"
-                        strokeWidth="3"
-                        stroke="hsl(0, 0%, 18%)"
-                        strokeLinecap="round"
-                        d= "M 3 2.5 L 17 16.346"
-                      />                
-                  </svg>
-                  </button>
-              </BrowserView>
-            </>
-            }
+            
             </motion.div>
 
         </div>
@@ -478,19 +444,15 @@ export const Experience = () => {
 
 
 
-          
+
           <div className="titleHeading">
-             👆 an icon
+             Tap on a project to view
           </div>
           
-          
-          <div className="titleWork">
-              Employment
-          </div>
           
               
           
-          <motion.div className="imageBoxContainerWork"
+          <motion.div className="imageBoxContainerProjects"
                 initial={{
                   opacity: 0,
                   y: 50,
@@ -503,42 +465,43 @@ export const Experience = () => {
                   delay: 0.1,
                   duration: 0.5,
               }}
-            >
-              {workHistoryList.map(item => (
+            > 
+            <BrowserView>
+                <motion.div className="decorativeContainer" style={{left:"40vw", top:"30vw"}}/>
+                <motion.div className="decorativeContainer" style={{left:"-23vw", top:"32vh"}}/>
+                <motion.div className="decorativeContainer" style={{left:"37vw", top:"-20vh"}}/>
+                <motion.div className="decorativeContainer" style={{right:"-40vw", top:"10vh"}}/>
+                <motion.div className="decorativeContainer" style={{left:"-40vw", top:"-15vh"}}/>
+                <motion.div className="decorativeContainer" style={{left:"-5vw", top:"55vh"}}/>
+                <motion.div className="decorativeContainer" style={{left:"-40vw", top:"60vh"}}/>
+            </BrowserView>
+              {projectList.map(item => (
                 <div  layoutId={item.id} onClick={() => setSelectedId(item.id)}>
-                    <HistoryBox className="imageBox" image={item.img}  delay={0.2 + (item.id-1) * 0.1}/>
+                    <ProjectBox className="imageBox" image={item.img}  delay={0.2 + (item.id-1) * 0.1}/>
                 </div>))}
 
               
             </motion.div>
 
-            <motion.div className="imageBoxContainerEducation"
-                initial={{
+            
+
+              
+
+            <TEMP>
+
+            <motion.div 
+              initial={{
                   opacity: 0,
                   y: 50,
               }}
               animate={{
                   opacity: 1,
-                  y: 1,
+                  y: 0,
               }}
-              transition={{
-                  delay: 0.1,
-                  duration: 0.5,
-              }}
-            >
-              {educationHistoryList.map(item => (
-                <div  layoutId={item.id} onClick={() => setSelectedId(item.id)}>
-                    <HistoryBox className="imageBox" image={item.img}  delay={0.5 + (item.id-101) * 0.1}/>
-                </div>))}
-
-              
+              >
+                <div className="titleText">Projects</div>
             </motion.div>
-
-              
-
-            <div className="titleEducation">
-              Education
-             </div>
+            </TEMP>
       
           
           
