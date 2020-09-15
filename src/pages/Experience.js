@@ -101,13 +101,13 @@ const Styles = styled.div`
     ${isMobile ? 
       `
       
-      font-size: calc(2vh + 1px);
+      font-size: calc(2vh + 7px);
       font-weight: bold;
       `
       :
       `
       
-      font-size: calc(2vw + 1px);
+      font-size: calc(2vw + 7px);
       font-weight: bold;
       
       `
@@ -127,13 +127,13 @@ const Styles = styled.div`
     ${isMobile ? 
       `
       
-      font-size: calc(2vh + 1px);
+      font-size: calc(1.5vh + 3px);
       font-weight: bold;
       `
       :
       `
       
-      font-size: calc(2vw + 1px);
+      font-size: calc(1.5vw + 1px);
       font-weight: bold;
       
       `
@@ -153,13 +153,13 @@ const Styles = styled.div`
     ${isMobile ? 
       `
       
-      font-size: calc(2.5vh + 1px);
+      font-size: calc(2vh + 3px);
       font-weight: bold;
       `
       :
       `
       
-      font-size: calc(2vw + 5px);
+      font-size: calc(2vw + 3px);
       font-weight: bold;
       
       `
