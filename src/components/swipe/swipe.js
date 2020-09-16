@@ -119,7 +119,7 @@ const Styles = styled.div`
 export const Swipe = () => {
 
   const x = useMotionValue(0);
-  const xInput = [-100, 0, 100];
+  const xInput = [isMobile ? -50:-100, 0, isMobile ? 50:100];
   const background = useTransform(x, xInput, [
     "linear-gradient(180deg, #ff008c 0%, rgb(211, 9, 225) 100%)",
     "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)",
@@ -130,9 +130,9 @@ export const Swipe = () => {
     "#3ad6b9",
     "rgb(3, 209, 0)"
   ]);
-  const tickPath = useTransform(x, [10, 100], [0, 1]);
-  const crossPathA = useTransform(x, [-10, -50], [0, 1]);
-  const crossPathB = useTransform(x, [-50, -100], [0, 1]);
+  const tickPath = useTransform(x, [isMobile ? 5:10, isMobile ? 50:100], [0, 1]);
+  const crossPathA = useTransform(x, [isMobile ? -5:-10, isMobile ? -25:-50], [0, 1]);
+  const crossPathB = useTransform(x, [isMobile ? -25:-50, isMobile ? -50:-100], [0, 1]);
   const handleDragEnd = ()=>{
     if(x.get()<xInput[0]*0.9){
       window.location = "/";
