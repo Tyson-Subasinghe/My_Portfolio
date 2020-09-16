@@ -1,15 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import ScrollText from 'react-scroll-text';
 import {motion} from 'framer-motion';
 import Marquee from "react-marquee";
 import tealShoe from '../assets/tealShoe.png';
-import { useInView } from 'react-intersection-observer';
-import {FloatInAnimation} from '../components/FloatInAnimation';
-import {rickLogo} from '../assets/tealShoe.png'
 import {isBrowser, isMobile} from "react-device-detect";
-
-
 
 const Styles = styled.div`
 
@@ -19,7 +13,6 @@ const Styles = styled.div`
         width: 80vmin;
         mouseEvents: none;
     }
-
 
     .textLeft{
         position: absolute;
@@ -33,14 +26,12 @@ const Styles = styled.div`
             top: calc(40%);
             font-size: calc(10vh);
             `
-            }
-        
+        }
         right: calc(50%);
         overflow: hidden;
         justify-content: center;
         align-items: center;
         z-index: -2;
-        
     }
 
     .textRight{
@@ -55,14 +46,12 @@ const Styles = styled.div`
             top: calc(40%);
             font-size: calc(8vh);
             `
-            }
-        
+        }
         left: calc(50%);
         overflow: hidden;
         justify-content: center;
         align-items: center;
         z-index: -2;
-        
     }
 
     .background{
@@ -76,65 +65,52 @@ const Styles = styled.div`
         background-repeat: no-repeat;
         display: flex;
     }
+
 `;
 
 export const Home = () => {
     
-
     return(
-    
 
-            
-                <Styles>
-                    
-                     
-                     <motion.div className="background"  >
+        <Styles>
+            <motion.div className="background"  >
+                <motion.div 
+                    initial={{
+                        opacity: 0,
+                    }}
+                    animate={{
+                        opacity: 1,
+                    }}
+                    transition={{delay: 1, duration: 0
+                    }} style={{alignItems:"center"}}
+                >
+                    <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
+                        <Marquee hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
+                    </div>
+                    <div className="textRight" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
+                        <Marquee hoverToStop={true} loop={true} text="Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  "/>
+                    </div>
+                </motion.div>
+                
+                <motion.div 
+                    initial={{
+                        opacity: 0,
+                        y: 100,
+                        rotate: -10
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 0,
+                        rotate:0
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                >
+                    <img src={tealShoe}  className="shoe"/>
+                </motion.div>
 
-                     
-
-                     <motion.div 
-                        initial={{
-                            opacity: 0,
-                        }}
-                        animate={{
-                            opacity: 1,
-                        }}
-                        transition={{delay: 1, duration: 0
-                        }} style={{alignItems:"center"}}>
-                                    
-                            
-                            
-                            <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
-                                <Marquee hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
-                            </div>
-
-                            <div className="textRight" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
-                                <Marquee hoverToStop={true} loop={true} text="Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens Rick Owens  "/>
-                            </div>
-
-                        </motion.div>
-                        
-                        <motion.div 
-                        initial={{
-                            opacity: 0,
-                            y: 100,
-                            rotate: -10
-                        }}
-                        animate={{
-                            opacity: 1,
-                            y: 0,
-                            rotate:0
-                        }}
-                        transition={{
-                            duration: 1
-                        }}>
-                            <img src={tealShoe}  className="shoe"/>
-                        </motion.div>
-                    </motion.div>
-
-                </Styles>
-
-        
-
-    
+            </motion.div>
+        </Styles>
+  
 )}

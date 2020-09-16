@@ -12,6 +12,7 @@ const Path = props => (
 );
 
 export const MenuToggle = ({ toggle }) => (
+
   <button onClick={toggle} style={{zIndex:5}}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
@@ -36,4 +37,5 @@ export const MenuToggle = ({ toggle }) => (
       />
     </svg>
   </button>
+
 );

@@ -9,22 +9,7 @@ h1 {
   font-family: 'ITCAvantGardeStd';
   font-weight: bold;
   color: #000000;
-  
 }
-
-h2 {
-  font-family: 'ITCAvantGardeStd';
-  font-weight: 200;
-  color: #000000;
-}
-
-h5 {
-  font-family: 'CharlieText-Regular';
-  font-weight: 200;
-  color: #3ad6b9;
-}
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -42,10 +27,6 @@ code {
   font-family: 'Plateia';
   src: local('Charlie'), url(./fonts/Plateia-Bold.ttf) format('truetype');
 }
-
-
-
-
 
 ::selection {
   background-color: rgba(58, 214, 185, 0.8);

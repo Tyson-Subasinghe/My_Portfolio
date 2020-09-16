@@ -1,10 +1,8 @@
 import React from 'react';
 import {useRef} from 'react';
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue } from "framer-motion";
 import {isBrowser, isMobile} from "react-device-detect";
 import styled from 'styled-components';
-
-
 
 const Styles = styled.div`
 
@@ -31,11 +29,9 @@ const Styles = styled.div`
   width: 150px;
   height: 150px;
   position: absolute;
-  
   display: flex;
   justify-content: center;
   align-items: center;
-
   ${isMobile ? 
     `
     top: calc(92% - 150px);
@@ -46,11 +42,10 @@ const Styles = styled.div`
     top: calc(92% - 150px);
     left: calc(50% - 150px / 2);
     `
-    }
+  }
 }
 
 .toptext{
-  
   font-family: ITCAvantGardeStd;
   ${isMobile ? 
     `
@@ -63,16 +58,11 @@ const Styles = styled.div`
     top: calc(10%);
     font-size: calc(4vw + 10px);
     font-weight: bold;
-    
     `
-    }
-  
-  
-
+  }
 }
 
 .subtext{
-  
   font-family: ITCAvantGardeStd;
   ${isMobile ? 
     `
@@ -84,15 +74,10 @@ const Styles = styled.div`
     top: calc(62%);
     font-size: calc(2vw + 5px);
     `
-    }
-
-  
+  } 
 }
 
 `;
-
-
-
 
 export const NoMatch = () => {    
     
@@ -105,33 +90,28 @@ export const NoMatch = () => {
 
         <Styles>
           <div className="background">
-             
-          <motion.div className="container" >
-              
-              <div>
-                <p className="toptext">Four Hundred and Four</p>
-                <p> </p>
-                <p className="subtext">What did you expect? :)</p>
-                <p className="subtext">Here is a shape to play with</p>
-              </div>
-              
+            <motion.div className="container" >
 
-
-              
-
-              <motion.div className="ball"
-              ref = {ballRef}
-              drag
-              dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh*0.92 + 150), bottom: (vh*0.08)}}
-              style={{ x }}
-              whileHover={{ scale: 1.2, rotate: 90 }}
-              whileTap={{
-                scale: 0.8,
-                rotate: -90,
-                borderRadius: "100%"
-              }}/>
-
-          </motion.div>
+                <div>
+                  <p className="toptext">Four Hundred and Four</p>
+                  <p className="subtext">What did you expect? :)</p>
+                  <p className="subtext">Here is a shape to play with</p>
+                </div>
+                
+                <motion.div className="ball"
+                  ref = {ballRef}
+                  drag
+                  dragConstraints ={{left: (-vw/2 + 75), right: (vw/2 - 75), top: (-vh*0.92 + 150), bottom: (vh*0.08)}}
+                  style={{ x }}
+                  whileHover={{ scale: 1.2, rotate: 90 }}
+                  whileTap={{
+                    scale: 0.8,
+                    rotate: -90,
+                    borderRadius: "100%"
+                  }}
+                />
+                
+            </motion.div>
           </div>
         </Styles>
 )}

@@ -1,4 +1,3 @@
-
 ul,
 li {
   list-style: none;
@@ -27,7 +26,6 @@ li {
 li:last-child {
   margin-bottom: 0px;
 }
-
 
 .imageBoxes {
   position: absolute;

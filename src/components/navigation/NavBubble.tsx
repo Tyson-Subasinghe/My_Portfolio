@@ -8,7 +8,6 @@ import styled from 'styled-components';
 
 const Styles = styled.div`
     
-
 nav {
     position: absolute;
     top: 0;
@@ -122,22 +121,23 @@ const sidebar = {
 };
 
 export const NavBar = () => {
+  
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
 
   return (
     <Styles>
-        <motion.nav
-      initial={false}
-      animate={isOpen ? "open" : "closed"}
-      custom={height}
-      ref={containerRef}
-    >
-      <motion.div className="background" variants={sidebar} />
-      <Navigation />
-      <MenuToggle toggle={() => toggleOpen()} />
-    </motion.nav>
+      <motion.nav
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+        custom={height}
+        ref={containerRef}
+      >
+          <motion.div className="background" variants={sidebar} />
+          <Navigation />
+          <MenuToggle toggle={() => toggleOpen()} />
+      </motion.nav>
     </Styles>
     
   );

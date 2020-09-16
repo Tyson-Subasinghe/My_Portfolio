@@ -6,13 +6,9 @@ import styled from 'styled-components';
 import { useDimensions } from "../navigation/use-dimensions.ts";
 import {isBrowser, isMobile} from "react-device-detect";
 
-
-
-
 const Styles = styled.div`
 
 .container {
-
     ${isMobile ? 
         `
         width: 13vh;
@@ -27,13 +23,10 @@ const Styles = styled.div`
         margin: 1vw;
         border-radius: 3.3vw;
         `
-        }
-  
+    }
   display: grid;
   overflow: wrap;
-  
   background: rgba(255, 255, 255, 0.3);
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,24 +45,21 @@ const Styles = styled.div`
         width: 5.33vw;
         height: 5.33vw;
         `
-        }
-  
+    }
   mouseEvents: none;
 }
-
 
 `;
 
 
 export const ImageBox = (props) => {
 
-
     const { ref, inView } = useInView({});
     const containerRef = useRef(null);
     const {height, width} = useDimensions(containerRef);
     
-
     return(
+        
         <Styles>
             <motion.div 
                 initial={{
@@ -84,18 +74,16 @@ export const ImageBox = (props) => {
                     delay: 0.5+props.delay,
                     duration: 0.35,
                 }}
-            ref = {containerRef}
-            drag
-            dragConstraints = {containerRef}
-            className="container">
+                ref = {containerRef}
+                drag
+                dragConstraints = {containerRef}
+                className="container"
+            >
                 <a href={props.link} draggable="false"> 
-                <img ref={ref} src={props.image} className="containerImage" draggable="false"/>
+                    <img ref={ref} src={props.image} className="containerImage" draggable="false"/>
                 </a>
-
             </motion.div>
         </Styles>
 
-        
-    
     )
 }

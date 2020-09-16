@@ -8,10 +8,7 @@ export const FloatInAnimation = (props) => {
     const { ref, inView } = useInView({});
 
     return(
-
-        <motion.div
-        
-        
+        <motion.div        
         initial={{
             opacity: props.initialOpacity,
             y: props.yOffset,
@@ -24,12 +21,9 @@ export const FloatInAnimation = (props) => {
             delay: props.delay,
             duration: props.duration
         }}>
-
-        <div ref={ref}>
-          {props.children}
-        </div>
-
+            <div ref={ref}>
+            {props.children}
+            </div>
         </motion.div>
-    
     )
 }
