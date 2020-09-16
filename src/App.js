@@ -6,7 +6,7 @@ import {Projects} from './pages/Projects';
 import {Passions} from './pages/Passions';
 import {Contact} from './pages/Contact';
 import {NoMatch} from './pages/404';
-import {NavBar} from './components/navigation/NavBubble.tsx';
+import {NavBar} from './components/navigation/NavBubble.js';
 
 
 

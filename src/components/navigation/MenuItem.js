@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Nav, Navbar, NavLink } from 'react-bootstrap';
 import home from '../../assets/home.svg';

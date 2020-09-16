@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useInView } from 'react-intersection-observer';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
-import { useDimensions } from "../navigation/use-dimensions.ts";
+import { useDimensions } from "../navigation/use-dimensions.js";
 import {isBrowser, isMobile} from "react-device-detect";
 
 const Styles = styled.div`

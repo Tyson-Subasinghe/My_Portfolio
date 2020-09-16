@@ -1,6 +1,6 @@
-import * as React from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import { MenuItem } from "./MenuItem.tsx";
+import { MenuItem } from "./MenuItem.js";
 import navList from "../../assets/data/navigationList.js";
 
 const variants = {

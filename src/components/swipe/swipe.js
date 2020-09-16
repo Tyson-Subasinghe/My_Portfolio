@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import {isBrowser, isMobile} from "react-device-detect";
 import styled from 'styled-components';

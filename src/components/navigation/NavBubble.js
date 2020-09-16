@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
-import { useDimensions } from "./use-dimensions.ts";
-import { MenuToggle } from "./MenuToggle.tsx";
-import { Navigation } from "./Navigation.tsx";
+import { useDimensions } from "./use-dimensions.js";
+import { MenuToggle } from "./MenuToggle.js";
+import { Navigation } from "./Navigation.js";
 import styled from 'styled-components';
 
 const Styles = styled.div`
