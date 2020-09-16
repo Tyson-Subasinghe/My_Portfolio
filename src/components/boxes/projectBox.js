@@ -2,7 +2,7 @@ import React from 'react';
 import { useRef } from "react";
 import {motion, useMotionValue} from 'framer-motion';
 import styled from 'styled-components';
-import {isBrowser, isMobile} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 
 const Styles = styled.div`
 

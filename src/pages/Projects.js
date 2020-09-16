@@ -4,7 +4,7 @@ import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
 import "../styles.css";
 import projectList from "../assets/data/projectList";
 import styled from 'styled-components';
-import {isBrowser, isMobile} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 
 const Styles = styled.div`
 
@@ -106,8 +106,6 @@ const Styles = styled.div`
 `;
 
 export const Projects = () => {
-    
-  const [selectedId, setSelectedId] = useState(null)
   
   return(
 

@@ -3,8 +3,7 @@ import { useRef } from "react";
 import { useInView } from 'react-intersection-observer';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
-import { useDimensions } from "../navigation/use-dimensions.js";
-import {isBrowser, isMobile} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 
 const Styles = styled.div`
 
@@ -55,7 +54,6 @@ export const HistoryBox = (props) => {
 
     const { ref, inView } = useInView({});
     const containerRef = useRef(null);
-    const {height, width} = useDimensions(containerRef);
     
     return(
 

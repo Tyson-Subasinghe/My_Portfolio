@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import styled from 'styled-components';
 import { motion } from "framer-motion";
-import {isBrowser, isMobile, BrowserView, MobileView} from "react-device-detect";
+import { isMobile, BrowserView, MobileView} from "react-device-detect";
 
 const Styles = styled.div`
 
@@ -100,23 +100,23 @@ export const Passions = () => {
             <div className="textNonHighlight" onMouseOver={()=>setImageVisible(5)} style={{top:"64.4vh"}}>Fashion</div>
             <div className="textNonHighlight" onMouseOver={()=>setImageVisible(6)} style={{top:"80vh"}}>Reading</div>
 
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==1 ? 1:0 ,}}>
-            <img src = {images[0]} style={{ top: "02vh", left: "0vw"}} className="imageHighlight"/>
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===1 ? 1:0 ,}}>
+            <img src = {images[0]} style={{ top: "02vh", left: "0vw"}} className="imageHighlight" alt="fitness"/>
             </motion.div>
-            <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible==2 ? 1:0 ,}}>
-            <img src = {images[1]} style={{ top: "17.6vh", left: "70vw"}} className="imageHighlight"/>
+            <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible===2 ? 1:0 ,}}>
+            <img src = {images[1]} style={{ top: "17.6vh", left: "70vw"}} className="imageHighlight" alt="sneakers"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==3 ? 1:0 ,}}>
-            <img src = {images[2]} style={{ top: "33.2vh", left: "1vw", }} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===3 ? 1:0 ,}}>
+            <img src = {images[2]} style={{ top: "33.2vh", left: "1vw", }} className="imageHighlight" alt="cars"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==4 ? 1:0 ,}}>
-            <img src = {images[3]} style={{ top: "40.8vh", left: "70vw", width:"15vw"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===4 ? 1:0 ,}}>
+            <img src = {images[3]} style={{ top: "40.8vh", left: "70vw", width:"15vw"}} className="imageHighlight" alt="watches"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==5 ? 1:0 ,}}>
-            <img src = {images[4]} style={{ top: "42.8vh", left: "3vw", width: "25vw"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===5 ? 1:0 ,}}>
+            <img src = {images[4]} style={{ top: "42.8vh", left: "3vw", width: "25vw"}} className="imageHighlight" alt="fashion"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==6 ? 1:0 ,}}>
-            <img src = {images[5]} style={{ top: "58.8vh", left: "70vw", width: "12vw"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===6 ? 1:0 ,}}>
+            <img src = {images[5]} style={{ top: "58.8vh", left: "70vw", width: "12vw"}} className="imageHighlight" alt="reading"/>
             </motion.div>
           </BrowserView>
 
@@ -129,23 +129,23 @@ export const Passions = () => {
             <div className="textNonHighlight" onMouseOver={()=>setImageVisible(5)} style={{top:"69.4vh", color: "black", webkitTextStrokeColor: "black"}}>Fashion</div>
             <div className="textNonHighlight" onMouseOver={()=>setImageVisible(6)} style={{top:"85vh"}}>Reading</div>
 
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==1 ? 1:0 ,}}>
-            <img src = {images[0]} style={{ top: "0vh", left: "calc(15%)"}} className="imageHighlight"/>
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===1 ? 1:0 ,}}>
+            <img src = {images[0]} style={{ top: "0vh", left: "calc(15%)"}} className="imageHighlight" alt="fitness"/>
             </motion.div>
-            <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible==2 ? 1:0 ,}}>
-            <img src = {images[1]} style={{ top: "13.6vh", left: "calc(20%)"}} className="imageHighlight"/>
+            <motion.div initial={{opacity: 0,}} animate={{opacity: imageVisible===2 ? 1:0 ,}}>
+            <img src = {images[1]} style={{ top: "13.6vh", left: "calc(20%)"}} className="imageHighlight" alt="sneakers"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==3 ? 1:0 ,}}>
-            <img src = {images[2]} style={{ top: "37.2vh", left: "calc(15%)", }} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===3 ? 1:0 ,}}>
+            <img src = {images[2]} style={{ top: "37.2vh", left: "calc(15%)", }} className="imageHighlight" alt="cars"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==4 ? 1:0 ,}}>
-            <img src = {images[3]} style={{ top: "45.8vh", left: "calc(35%)", width:"15vh"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===4 ? 1:0 ,}}>
+            <img src = {images[3]} style={{ top: "45.8vh", left: "calc(35%)", width:"15vh"}} className="imageHighlight" alt="watches"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==5 ? 1:0 ,}}>
-            <img src = {images[4]} style={{ top: "53.8vh", left: "calc(17%)"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===5 ? 1:0 ,}}>
+            <img src = {images[4]} style={{ top: "53.8vh", left: "calc(17%)"}} className="imageHighlight" alt="fashion"/>
             </motion.div>
-            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible==6 ? 1:0 ,}}>
-            <img src = {images[5]} style={{ top: "68.8vh", left: "35vw", width: "16vh"}} className="imageHighlight" />
+            <motion.div  initial={{opacity: 0,}} animate={{opacity: imageVisible===6 ? 1:0 ,}}>
+            <img src = {images[5]} style={{ top: "68.8vh", left: "35vw", width: "16vh"}} className="imageHighlight" alt="reading"/>
             </motion.div>
           </MobileView>
 

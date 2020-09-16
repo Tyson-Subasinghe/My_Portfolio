@@ -1,14 +1,12 @@
 import React from 'react';
 import { useState } from "react";
 import styled from 'styled-components';
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {HistoryBox} from '../components/boxes/historyBox';
-import {isBrowser, isMobile, MobileView, BrowserView} from "react-device-detect";
+import {isMobile, BrowserView} from "react-device-detect";
 import workHistoryList from "../assets/data/workHistoryList";
 import educationHistoryList from "../assets/data/educationHistoryList";
 import "../styles.css";
-
-const background = "linear-gradient(180deg, rgb(0, 255, 185) 0%, #3ad6b9 100%)";
 
 const Styles = styled.div`
 

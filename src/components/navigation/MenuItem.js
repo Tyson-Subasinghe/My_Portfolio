@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Nav, Navbar, NavLink } from 'react-bootstrap';
+import { NavLink } from 'react-bootstrap';
 import home from '../../assets/home.svg';
 import history from '../../assets/history.svg';
 import projects from '../../assets/projects.svg';
@@ -40,7 +40,7 @@ export const MenuItem = ({ i }) => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="icon-placeholder" ><img src={icons[i.number-1]} style={{width:'25px' }}/></div>
+        <div className="icon-placeholder" ><img src={icons[i.number-1]} style={{width:'25px' }} alt="icon" /></div>
         <div className="text-placeholder" style={{fontFamily: "ITCAvantGardeStd"}}>{i.title}</div>
       </motion.li>
     </NavLink>

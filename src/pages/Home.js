@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import Marquee from "react-marquee";
 import tealShoe from '../assets/tealShoe.png';
-import {isBrowser, isMobile} from "react-device-detect";
+import {isMobile} from "react-device-detect";
 
 const Styles = styled.div`
 
@@ -107,7 +107,7 @@ export const Home = () => {
                         duration: 1
                     }}
                 >
-                    <img src={tealShoe} aria-label="shoe" className="shoe"/>
+                    <img src={tealShoe} aria-label="shoe" alt="shoe" className="shoe" />
                 </motion.div>
 
             </motion.div>
