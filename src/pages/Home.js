@@ -38,13 +38,13 @@ const Styles = styled.div`
         position: absolute;
         font-family: "Plateia";
         ${isMobile ? `
-            top: calc(45% - 1px);
-            font-size: calc(4vh);
+            top: calc(44.5% - 1px);
+            font-size: calc(4.5vh);
             `
             :
             `
-            top: calc(40%);
-            font-size: calc(8vh);
+            top: calc(39% - 2px);
+            font-size: calc(9vh);
             `
         }
         left: calc(50%);
