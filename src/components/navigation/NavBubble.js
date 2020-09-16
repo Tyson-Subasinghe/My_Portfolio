@@ -21,8 +21,8 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     width: 300px;
+    height: calc(100vh);
     background: rgba(255, 255, 255, 0.95);
   }
   
