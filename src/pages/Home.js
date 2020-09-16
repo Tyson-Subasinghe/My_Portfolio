@@ -107,7 +107,7 @@ export const Home = () => {
                         duration: 1
                     }}
                 >
-                    <img src={tealShoe}  className="shoe"/>
+                    <img src={tealShoe} aria-label="shoe" className="shoe"/>
                 </motion.div>
 
             </motion.div>

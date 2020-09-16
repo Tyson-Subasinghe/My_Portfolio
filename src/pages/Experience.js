@@ -168,6 +168,8 @@ const Styles = styled.div`
     align-items: center;
   }
 
+  
+
   .titleWork{
     position: absolute;
     z-index: 1;
@@ -402,7 +404,7 @@ export const Experience = () => {
             )}
             </div>
                   
-            <div className="titleHeading">
+            <div className="titleHeading" aria-label="Tap an icon">
               👆 an icon
             </div>
             
