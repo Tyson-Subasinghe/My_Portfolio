@@ -2,8 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
 import Marquee from "react-marquee";
+import tealShoeLowRes from '../assets/tealShoeLowRes.png';
 import tealShoe from '../assets/tealShoe.png';
 import {isMobile} from "react-device-detect";
+import {BlurUp} from "../components/blurUp/BlurUp";
+import {BlurUpImage} from "../components/blurUp/BlurUpImage";
 
 const Styles = styled.div`
 
@@ -68,8 +71,15 @@ const Styles = styled.div`
 
 `;
 
+
+
 export const Home = () => {
     
+    const [unblur, {blur}] = BlurUp(
+        tealShoeLowRes,
+        tealShoe
+    );
+
     return(
 
         <Styles>
@@ -84,6 +94,7 @@ export const Home = () => {
                     transition={{delay: 1, duration: 0
                     }} style={{alignItems:"center"}}
                 >
+                    
                     <div  className="textLeft" style={{ width: '50vw', whiteSpace: 'nowrap'}}>
                         <Marquee hoverToStop={true} loop={true} text="adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas adidas "/>
                     </div>
@@ -107,7 +118,22 @@ export const Home = () => {
                         duration: 1
                     }}
                 >
-                    <img src={tealShoe} aria-label="shoe" alt="shoe" className="shoe" />
+                    
+                    <img
+                        src={unblur}
+                        style={{
+                            filter: blur
+                            ? "blur(0px)"
+                            : "none",
+                            transition: blur
+                            ? "none"
+                            : "filter 0.3s ease-out"
+                        }}
+                        aria-label="shoe" 
+                        alt="shoe" 
+                        className="shoe"
+                    />
+                    
                 </motion.div>
 
             </motion.div>
