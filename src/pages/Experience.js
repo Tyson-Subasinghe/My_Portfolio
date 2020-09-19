@@ -20,7 +20,7 @@ const Styles = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
   }
 
   .invisibleoverlay{
@@ -52,13 +52,13 @@ const Styles = styled.div`
     height: 50vh;
     width: 70vw;
     justify-content: center;
-    align-items: center;          
+    align-items: center;
   }
 
   .line1{
     position: relative;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       font-size: calc(3.5vh + 1px);
       font-weight: bold;
@@ -77,7 +77,7 @@ const Styles = styled.div`
   .line2{
     position: relative;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       font-size: calc(2vh + 7px);
       font-weight: bold;
@@ -95,13 +95,13 @@ const Styles = styled.div`
   .line3{
     position: relative;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       font-size: calc(1.5vh + 3px);
       font-weight: bold;
       `
       :
-      `      
+      `
       font-size: calc(1.5vw + 1px);
       font-weight: bold;
       `
@@ -113,7 +113,7 @@ const Styles = styled.div`
   .line4{
     position: relative;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       font-size: calc(2vh + 3px);
       font-weight: bold;
@@ -150,7 +150,7 @@ const Styles = styled.div`
     position: absolute;
     z-index: 1;
     font-weight: bold;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(2%);
       font-size: calc(5vh + 2px);
@@ -166,12 +166,12 @@ const Styles = styled.div`
     align-items: center;
   }
 
-  
+
 
   .titleWork{
     position: absolute;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(13%);
       font-size: calc(2.5vh + 1px);
@@ -197,16 +197,16 @@ const Styles = styled.div`
     overflow: show;
     margin: 0;
     list-style: none;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(18%);
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       `
       :
       `
       top: calc(30%);
-      grid-template-columns:  repeat(3, 1fr); 
+      grid-template-columns:  repeat(3, 1fr);
       grid-template-rows: repeat(1, 1fr);
       `
     }
@@ -217,10 +217,10 @@ const Styles = styled.div`
   }
 
 
-  .titleEducation{   
+  .titleEducation{
     position: absolute;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(55%);
       font-size: calc(2.5vh + 1px);
@@ -245,16 +245,16 @@ const Styles = styled.div`
     overflow: show;
     margin: 0;
     list-style: none;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(60%);
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       `
       :
       `
       top: calc(65%);
-      grid-template-columns:  repeat(4, 1fr); 
+      grid-template-columns:  repeat(3, 1fr); 
       grid-template-rows: repeat(1, 1fr);
       `
     }
@@ -268,10 +268,10 @@ const Styles = styled.div`
 
 
 export const Experience = () => {
-    
+
   const [selectedId, setSelectedId] = useState(null);
   const [contentOpacity, setContentOpacity] = useState(1);
-  
+
     return(
 
       <Styles>
@@ -279,13 +279,13 @@ export const Experience = () => {
           <div className="background">
 
             <div>
-            
+
             {selectedId  &&  (
-        
-              <div> 
-          
-                <motion.div 
-                className="invisibleoverlay" 
+
+              <div>
+
+                <motion.div
+                className="invisibleoverlay"
                   onClick={() => {
                     setContentOpacity(0);
                     setTimeout(function(){setContentOpacity(1)}, 500);
@@ -308,10 +308,10 @@ export const Experience = () => {
                   }}
                   transition={{delay: 0, duration: 0.5}}
                 >
-                
+
                   <div className="overlayContent">
-                    
-                    <motion.div 
+
+                    <motion.div
                       initial={{
                           opacity: 0,
                       }}
@@ -321,21 +321,21 @@ export const Experience = () => {
                       transition={{delay: 0, duration: 0.5}}
                     >
 
-                      {selectedId<100 && 
+                      {selectedId<100 &&
                         <>
                           <div className="line1">{workHistoryList[selectedId-1].name}</div>
                           <div className="line2">{workHistoryList[selectedId-1].title}</div>
                           <div className="line3">{workHistoryList[selectedId-1].duration}</div>
                           <div className="line4">{workHistoryList[selectedId-1].description}</div>
                           <BrowserView>
-                              <button 
-                                style={{zIndex:5}} 
+                              <button
+                                style={{zIndex:5}}
                                 className="button"
                                 onClick={() => {
                                   setContentOpacity(0);
                                   setTimeout(function(){setContentOpacity(1)}, 500);
                                   setTimeout(function(){setSelectedId(null)}, 500);
-                                  }} 
+                                  }}
                               >
                                 <svg width="43" height="43" viewBox="0 0 33 33">
                                     <path
@@ -343,36 +343,36 @@ export const Experience = () => {
                                       strokeWidth="3"
                                       stroke="hsl(0, 0%, 18%)"
                                       strokeLinecap="round"
-                                      d="M 3 16.5 L 17 2.5" 
-                                    />                
+                                      d="M 3 16.5 L 17 2.5"
+                                    />
                                     <path
                                       fill="transparent"
                                       strokeWidth="3"
                                       stroke="hsl(0, 0%, 18%)"
                                       strokeLinecap="round"
                                       d= "M 3 2.5 L 17 16.346"
-                                    />                
+                                    />
                                 </svg>
                               </button>
                           </BrowserView>
                         </>
                       }
 
-                      {selectedId>100 && 
+                      {selectedId>100 &&
                         <>
                           <div className="line1">{educationHistoryList[selectedId-101].name}</div>
                           <div className="line2">{educationHistoryList[selectedId-101].title}</div>
                           <div className="line3">{educationHistoryList[selectedId-101].duration}</div>
                           <div className="line4">{educationHistoryList[selectedId-101].description}</div>
                           <BrowserView>
-                              <button 
-                                style={{zIndex:5}} 
+                              <button
+                                style={{zIndex:5}}
                                 className="button"
                                 onClick={() => {
                                   setContentOpacity(0);
                                   setTimeout(function(){setContentOpacity(1)}, 500);
                                   setTimeout(function(){setSelectedId(null)}, 500);
-                                  }} 
+                                  }}
                                 >
                                   <svg width="43" height="43" viewBox="0 0 33 33">
                                       <path
@@ -380,15 +380,15 @@ export const Experience = () => {
                                         strokeWidth="3"
                                         stroke="hsl(0, 0%, 18%)"
                                         strokeLinecap="round"
-                                        d="M 3 16.5 L 17 2.5" 
-                                      />                
+                                        d="M 3 16.5 L 17 2.5"
+                                      />
                                       <path
                                         fill="transparent"
                                         strokeWidth="3"
                                         stroke="hsl(0, 0%, 18%)"
                                         strokeLinecap="round"
                                         d= "M 3 2.5 L 17 16.346"
-                                      />                
+                                      />
                                   </svg>
                               </button>
                           </BrowserView>
@@ -401,16 +401,16 @@ export const Experience = () => {
               </div>
             )}
             </div>
-                  
+
             <div className="titleHeading" aria-label="Tap an icon">
               👆 an icon
             </div>
-            
+
             <div className="titleWork">
                 Employment
             </div>
-                    
-            <motion.div 
+
+            <motion.div
               className="imageBoxContainerWork"
               initial={{
                   opacity: 0,
@@ -436,7 +436,7 @@ export const Experience = () => {
               Education
             </div>
 
-            <motion.div 
+            <motion.div
               className="imageBoxContainerEducation"
               initial={{
                   opacity: 0,
@@ -460,9 +460,6 @@ export const Experience = () => {
 
           </div>
       </Styles>
-    
+
     )
 }
-
-
-  

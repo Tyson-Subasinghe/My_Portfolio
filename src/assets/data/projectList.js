@@ -4,19 +4,19 @@ const projectList =[
     {
         img: 'https://i.ibb.co/xLhXppf/logo.png',
         subtitle: 'Side Project',
-        title: 'Portfolio Website',
-        languages: 'ReactJS, TypeScript, CSS',
-        description: 'Developing this site has given me exposure to ReactJS, TypeScript, CSS and cross-browser / cross-device development.',
+        title: 'TysonTheDev Website',
+        languages: 'ReactJS, CSS',
+        description: 'Developing this site has given me exposure to ReactJS, CSS and cross-browser / cross-device development.',
         link: 'https://github.com/Tyson-Subasinghe/Portfolio',
         id: '1',
       },
-    
+
     {
         img: 'https://i.ibb.co/g7Xrftb/meal-Match-Image.png',
         subtitle: 'COMP3900 Project [Scored 84/100]',
         title: 'MealMatch Website',
         languages: 'ReactJS, CSS, Python',
-        description: 'MealMatch lets users find recipes based on ingredients they have in their fridges. The project was completed as part of a team of five people. ',
+        description: 'A site used to interact with the Spoonacular API, MealMatch lets users find recipes based on ingredients they have in their fridges. The project was completed as part of a team of five people. ',
         link: 'https://github.com/Tyson-Subasinghe/MealMatch',
         id: '2',
       },
