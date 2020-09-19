@@ -9,20 +9,20 @@ import phone from '../../assets/phone.png';
 import email from '../../assets/email.png';
 
 const Styles = styled.div`
-    
+
   .example-container {
-    width: 100vw; 
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   .prompt1 {
     font-family: ITCAvantGardeStd;
     position: absolute;
     z-index: 1;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(12%);
       font-size: calc(5vh + 2px);
@@ -43,7 +43,7 @@ const Styles = styled.div`
   .prompt2 {
     font-family: ITCAvantGardeStd;
     position: absolute;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(70%);
       font-size: calc(3vh + 2px);
@@ -51,31 +51,31 @@ const Styles = styled.div`
       :
       `
       top: calc(62%);
-      font-size: calc(2vw + 5px);      
+      font-size: calc(2vw + 5px);
       `
     }
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  
+
+
   .imageBoxContainer {
     position: absolute;
     display: grid;
     overflow: show;
     margin: 0;
     list-style: none;
-    ${isMobile ? 
+    ${isMobile ?
       `
       top: calc(25% + 5vh);
-      grid-template-columns: repeat(2, 1fr); 
+      grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       `
       :
       `
       top: calc(30%);
-      grid-template-columns:  repeat(4, 1fr); 
+      grid-template-columns:  repeat(4, 1fr);
       grid-template-rows: repeat(1, 1fr);
       `
     }
@@ -86,12 +86,12 @@ const Styles = styled.div`
   }
 
   .button {
-    ${isMobile ? 
+    ${isMobile ?
       `
-      width: calc(10vw + 70px);
-      height: calc(10vw + 70px);
-      top: calc(100% - ((10vw + 70px) / 2) - (15vh));
-      left: calc(50% - (10vw + 70px)/ 2);
+      width: calc(10vw + 50px);
+      height: calc(10vw + 50px);
+      top: calc(100% - ((10vw + 50px) / 2) - (12vh));
+      left: calc(50% - (10vw + 50px)/ 2);
       `
       :
       `
@@ -108,12 +108,12 @@ const Styles = styled.div`
     justify-content: center;
     align-items: center;
   }
-  
+
   .progress-icon {
     width: 100%;
     height: 100%;
   }
-  
+
 `;
 
 export const Swipe = () => {
@@ -138,7 +138,7 @@ export const Swipe = () => {
       window.location = "/";
     }else if(x.get()>xInput[2]*0.9){
       window.location = "mailto:tysonsubasinghe@gmail.com?subject=I swiped yes!";
-    } 
+    }
   };
 
   return (
@@ -177,7 +177,7 @@ export const Swipe = () => {
             dragConstraints={{ left: 0, right: 0 }}
             onDragEnd={handleDragEnd}
           >
-            
+
             <svg className="progress-icon" viewBox="0 0 50 50">
               <motion.path
                 fill="none"
@@ -208,6 +208,6 @@ export const Swipe = () => {
           </motion.div>
         </motion.div>
       </Styles>
-   
+
   );
 };
