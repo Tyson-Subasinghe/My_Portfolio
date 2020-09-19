@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRef } from "react";
-import { useInView } from 'react-intersection-observer';
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import {isMobile} from "react-device-detect";
@@ -52,7 +51,7 @@ const Styles = styled.div`
 
 export const HistoryBox = (props) => {
 
-    const { ref, inView } = useInView({});
+    
     const containerRef = useRef(null);
     
     return(
@@ -64,8 +63,8 @@ export const HistoryBox = (props) => {
                     y: 50,
                 }}
                 animate={{
-                    opacity: inView ? 1 : 0,
-                    y: inView ? 0 : 50,
+                    opacity: 1,
+                    y: 0,
                 }}
                 transition={{
                     delay: 0.5+props.delay,
@@ -78,7 +77,7 @@ export const HistoryBox = (props) => {
             >
 
                 <a href={props.link} draggable="false"> 
-                    <motion.img whileHover={{ scale: 1.1 }} ref={ref} src={props.image} className="containerImage" draggable="false"/>
+                    <motion.img whileHover={{ scale: 1.1 }}  src={props.image} className="containerImage" draggable="false"/>
                 </a>
             </motion.div>
         </Styles>
