@@ -68,7 +68,7 @@ const Styles = styled.div`
     list-style: none;
     ${isMobile ?
       `
-      top: calc(25% + 5vh);
+      top: calc(25%);
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       `
