@@ -5,13 +5,13 @@
     "main.js.map": "/static/js/main.14b5f416.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
     "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
-    "static/js/2.713efbbb.chunk.js": "/static/js/2.713efbbb.chunk.js",
-    "static/js/2.713efbbb.chunk.js.map": "/static/js/2.713efbbb.chunk.js.map",
+    "static/js/2.5d1ff932.chunk.js": "/static/js/2.5d1ff932.chunk.js",
+    "static/js/2.5d1ff932.chunk.js.map": "/static/js/2.5d1ff932.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.36800ccf4ea401258f01780a700e36df.js": "/precache-manifest.36800ccf4ea401258f01780a700e36df.js",
+    "precache-manifest.ecbc0ae22299577b372d34fb6b1e2bbc.js": "/precache-manifest.ecbc0ae22299577b372d34fb6b1e2bbc.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.27be1118.chunk.css.map": "/static/css/main.27be1118.chunk.css.map",
-    "static/js/2.713efbbb.chunk.js.LICENSE.txt": "/static/js/2.713efbbb.chunk.js.LICENSE.txt",
+    "static/js/2.5d1ff932.chunk.js.LICENSE.txt": "/static/js/2.5d1ff932.chunk.js.LICENSE.txt",
     "static/media/404.svg": "/static/media/404.465ee322.svg",
     "static/media/ITCAvantGardeStd-Demi.otf": "/static/media/ITCAvantGardeStd-Demi.5d6673c4.otf",
     "static/media/Plateia-Bold.ttf": "/static/media/Plateia-Bold.d6813086.ttf",
@@ -29,7 +29,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.83c3e0c4.js",
-    "static/js/2.713efbbb.chunk.js",
+    "static/js/2.5d1ff932.chunk.js",
     "static/css/main.27be1118.chunk.css",
     "static/js/main.14b5f416.chunk.js"
   ]
